@@ -285,346 +285,33 @@ h1.reveal.in,h2.reveal.in{animation:revealUp .9s cubic-bezier(.2,.8,.2,1) var(--
 @keyframes fxOut{0%{transform:translate(var(--x),var(--y)) scale(.3) rotate(0);opacity:1}100%{transform:translate(calc(var(--x) + var(--dx)),calc(var(--y) + var(--dy))) scale(1.1) rotate(var(--r));opacity:0}}
 @media(prefers-reduced-motion:reduce){.fx-layer,.fx-p{display:none}.reveal:not(.in){opacity:1}}
 </style>
-</head>
-<body><main aria-label="Additional romantic surprise pages" id="added-pages"><section id="opening"><div class="opening-glow"></div><div class="wrap"><div class="opening-target"><div aria-label="Glowing pink heart" class="heart3d" id="heartTarget"></div><div class="hit-burst" id="hitBurst">♥</div></div><div aria-live="polite" class="birthday-message" id="birthdayMessage">Happy Birthday Baby</div><div class="arrow-instruction" id="arrowInstruction">Drag the arrow anywhere</div><button aria-label="Drag arrow to heart" class="shoot-arrow" id="shootArrow">➶</button><h1 class="headline">A little surprise<br/><span class="script" style="color:#ff75aa">from my heart</span></h1><p class="copy">A tiny world, made with love. Take your time and enjoy every little moment.</p><button class="btn" onclick="go('gift')" style="margin-top:18px;position:relative;z-index:3" type="button">Continue to your surprise ↓</button></div><div class="skip">Scroll to begin ↓</div></section>
-<section class="hero">
-<div class="wrap">
-<div class="eyebrow">A little universe made just for you</div>
-<div class="hero-heart">♥</div>
-<h1>Welcome to your world</h1>
-<p class="hero-sub">A place for the builder in you, the fashion lover, the strong girl, and the explorer who is always ready for another adventure.</p>
-<button class="pill" onclick="document.querySelector('#civil').scrollIntoView({behavior:'smooth'})">LET'S EXPLORE ♥</button>
-</div>
-<div class="scroll-hint">SCROLL TO DISCOVER ↓</div>
-</section><section class="section-civil" id="civil">
-<div class="wrap">
-<h2>She builds dreams.</h2>
-<p class="lead">From tiny details to big structures — you have the mind of an engineer and the heart of an artist. Tap the little details in your construction site.</p>
-<div class="scene" id="construction">
-<svg aria-label="Pastel construction site illustration" role="img" viewbox="0 0 820 390">
-<defs><lineargradient id="sky" x2="0" y2="1"><stop stop-color="#eaf2f1"></stop><stop offset="1" stop-color="#fff4e8"></stop></lineargradient></defs>
-<rect fill="url(#sky)" height="390" rx="20" width="820"></rect>
-<circle cx="690" cy="65" fill="#f4dcae" r="34"></circle>
-<path d="M0 320 Q180 295 360 320 T820 315 V390 H0Z" fill="#cbded2"></path>
-<g class="hotspot" onclick="showMsg('civilMsg','Even the strongest bridges need a beautiful reason to connect two hearts. ♥')">
-<path d="M55 286 Q205 75 410 286 Q615 75 765 286" fill="none" stroke="#b88d86" stroke-width="12"></path>
-<path d="M55 286 H765" stroke="#d6b5ad" stroke-width="17"></path>
-<path d="M110 286 L110 320 M210 210 L210 320 M310 210 L310 320 M510 210 L510 320 M610 210 L610 320 M710 286 L710 320" stroke="#c69b91" stroke-width="8"></path>
-<text fill="#886b70" font-size="15" text-anchor="middle" x="410" y="350">TAP THE BRIDGE</text>
-</g>
-<g class="hotspot" onclick="showMsg('civilMsg','You turn plans into places, and ordinary spaces into something extraordinary. 🏡')">
-<rect fill="#f0cfc8" height="160" rx="5" stroke="#b98b87" stroke-width="4" width="150" x="325" y="145"></rect>
-<path d="M305 150 L400 75 L495 150Z" fill="#cba6b3" stroke="#a87e8b" stroke-width="5"></path>
-<rect fill="#b4c9ca" height="80" width="42" x="380" y="225"></rect><rect fill="#dcebea" height="34" width="34" x="343" y="175"></rect><rect fill="#dcebea" height="34" width="25" x="435" y="175"></rect>
-<text fill="#fff" font-size="13" text-anchor="middle" x="400" y="130">TAP THE HOUSE</text>
-</g>
-<g class="hotspot" onclick="showMsg('civilMsg','A little JCB energy: you move obstacles, make progress, and get things done. 💛')">
-<rect fill="#e9c66f" height="52" rx="14" stroke="#b58e4c" stroke-width="4" width="135" x="70" y="250"></rect>
-<rect fill="#f5df9e" height="45" rx="7" stroke="#b58e4c" stroke-width="4" width="55" x="110" y="210"></rect>
-<path d="M165 220 L215 170 L228 180 L190 240" fill="none" stroke="#c49b50" stroke-linecap="round" stroke-width="13"></path>
-<path d="M220 175 L250 190 L235 218 L208 200Z" fill="#d4ad60" stroke="#a9803e" stroke-width="4"></path>
-<circle cx="100" cy="306" fill="#7d7776" r="17"></circle><circle cx="178" cy="306" fill="#7d7776" r="17"></circle>
-<text fill="#886b70" font-size="13" text-anchor="middle" x="135" y="340">TAP THE JCB</text>
-</g>
-<g class="hotspot" onclick="showMsg('civilMsg','Your hard hat protects your head, but your kindness is what makes you special. ✨')">
-<path d="M585 170 Q590 105 650 105 Q710 105 715 170Z" fill="#f0cf83" stroke="#b18c55" stroke-width="5"></path><path d="M575 170 H725" stroke="#b18c55" stroke-linecap="round" stroke-width="12"></path>
-<text fill="#886b70" font-size="13" text-anchor="middle" x="650" y="195">TAP THE HELMET</text>
-</g>
-</svg>
-<div class="tap-note">Tap the bridge · house · JCB · helmet</div>
-<div class="message" id="civilMsg"></div>
-</div>
-</div>
-</section><section class="section-mall" id="mall">
-<div class="wrap">
-<h2>Her pastel boutique.</h2>
-<p class="lead">Your own little mall — because shopping is not a hobby, it's an experience. Scroll here and let the doors open.</p>
-<div class="scene" id="mallScene">
-<svg aria-label="Pastel shopping mall entrance" viewbox="0 0 820 360">
-<rect fill="#f8e9e9" height="360" rx="18" width="820"></rect>
-<circle cx="700" cy="65" fill="#f2d7b9" r="35"></circle>
-<path d="M90 320 V110 Q90 65 135 65 H685 Q730 65 730 110 V320Z" fill="#e7c9d2" stroke="#b98c9d" stroke-width="5"></path>
-<path d="M60 120 H760 V155 H60Z" fill="#d8b8c7"></path>
-<text fill="#805f70" font-size="27" letter-spacing="5" text-anchor="middle" x="410" y="105">THE PASTEL MALL</text>
-<g class="inside-glow"><rect fill="#fff5d9" height="170" width="250" x="285" y="150"></rect><path d="M300 290 H520" stroke="#e8c9b8" stroke-width="5"></path><circle cx="410" cy="205" fill="#f4d9b8" r="38"></circle></g>
-<g class="mall-door door-left"><rect fill="#d9e6e2" height="170" stroke="#9bb9b2" stroke-width="5" width="125" x="285" y="150"></rect><circle cx="390" cy="238" fill="#b18a72" r="5"></circle></g>
-<g class="mall-door door-right"><rect fill="#e7d8ed" height="170" stroke="#b49dbf" stroke-width="5" width="125" x="410" y="150"></rect><circle cx="430" cy="238" fill="#b18a72" r="5"></circle></g>
-<text fill="#886b70" font-size="13" text-anchor="middle" x="410" y="345">YOUR VERY OWN SHOPPING PARADISE</text>
-</svg>
-<div class="mall-controls"><button class="pill" id="openMall">OPEN THE MALL ✨</button></div>
-</div>
-<div class="shop-grid">
-<div class="item" onclick="showMsg('shopMsg','MRP: One million smiles. This outfit is sponsored by your amazing style. 💗')">
-<svg viewbox="0 0 150 130"><path d="M48 20 L65 10 H85 L102 20 L130 40 L111 65 L98 55 V120 H52 V55 L39 65 L20 40Z" fill="#e9cbd9" stroke="#bd9aaa" stroke-width="3"></path><path d="M65 10 Q75 38 85 10" fill="none" stroke="#bd9aaa" stroke-width="3"></path></svg><p>Blush pink top</p><small>TAP FOR PRICE ♥</small>
-</div>
-<div class="item" onclick="showMsg('shopMsg','MRP: 100 hugs from me. These lavender vibes are priceless. 💜')">
-<svg viewbox="0 0 150 130"><path d="M45 12 H105 L115 120 H35Z" fill="#d9d1eb" stroke="#a99bbb" stroke-width="3"></path><path d="M45 12 Q75 35 105 12" fill="none" stroke="#a99bbb" stroke-width="3"></path></svg><p>Lavender dress</p><small>TAP FOR PRICE ♥</small>
-</div>
-<div class="item" onclick="showMsg('shopMsg','MRP: Unlimited compliments. You would make this mint look even prettier. 🌿')">
-<svg viewbox="0 0 150 130"><path d="M50 15 H100 L110 45 L100 120 H50 L40 45Z" fill="#cfe3d8" stroke="#9cbcae" stroke-width="3"></path><path d="M50 15 L75 38 L100 15" fill="none" stroke="#9cbcae" stroke-width="3"></path></svg><p>Mint co-ord</p><small>TAP FOR PRICE ♥</small>
-</div>
-<div class="item" onclick="showMsg('shopMsg','MRP: One date night with me. The best accessory is your smile. ✨')">
-<svg viewbox="0 0 150 130"><path d="M35 48 L62 20 H95 L120 48 L105 115 H45Z" fill="#f2ddc8" stroke="#c6a88f" stroke-width="3"></path><path d="M62 20 Q75 50 95 20" fill="none" stroke="#c6a88f" stroke-width="3"></path></svg><p>Peach party dress</p><small>TAP FOR PRICE ♥</small>
-</div>
-</div>
-<div class="message" id="shopMsg"></div>
-</div>
-</section><section class="section-gym" id="gym">
-<div class="wrap">
-<h2>Strong looks good on you.</h2>
-<p class="lead">Tap any piece of equipment to unlock a little gym photo story. Each picture arrives one by one — just like every rep builds strength.</p>
-<div class="gym-equipment">
-<div class="equipment" onclick="openGymGallery('weights')">
-<div class="equipment-art"><svg viewbox="0 0 220 120"><g stroke="#947f9a" stroke-linecap="round" stroke-width="8"><path d="M60 60 H160"></path><path d="M48 35 V85 M65 27 V93 M155 27 V93 M172 35 V85"></path></g><g fill="#d5bfdc" stroke="#a991b3" stroke-width="3"><rect height="44" rx="7" width="22" x="31" y="38"></rect><rect height="44" rx="7" width="22" x="167" y="38"></rect></g><path d="M95 49 Q110 32 125 49" fill="none" stroke="#c99fb4" stroke-width="3"></path></svg></div>
-<h3>Dumbbells &amp; weights</h3><small>TAP TO UNLOCK PHOTOS</small>
-</div>
-<div class="equipment" onclick="openGymGallery('treadmill')">
-<div class="equipment-art"><svg viewbox="0 0 220 120"><path d="M65 28 L92 88 H183" fill="none" stroke="#9e8a9e" stroke-linecap="round" stroke-width="9"></path><path d="M85 90 H190" stroke="#c6a9c3" stroke-linecap="round" stroke-width="13"></path><path d="M66 27 H115" stroke="#9e8a9e" stroke-linecap="round" stroke-width="8"></path><circle cx="91" cy="100" fill="#d7bfdc" r="8"></circle><circle cx="181" cy="100" fill="#d7bfdc" r="8"></circle><rect fill="#d7e8df" height="20" rx="5" stroke="#9db6a8" stroke-width="3" width="35" x="57" y="15"></rect></svg></div>
-<h3>Treadmill time</h3><small>TAP TO UNLOCK PHOTOS</small>
-</div>
-<div class="equipment" onclick="openGymGallery('yoga')">
-<div class="equipment-art"><svg viewbox="0 0 220 120"><rect fill="#cbb9dc" height="19" rx="9" width="170" x="25" y="78"></rect><path d="M110 76 Q80 58 95 35 Q110 18 128 36 Q141 55 110 76Z" fill="#e8c5d0" stroke="#b88fa2" stroke-width="3"></path><path d="M110 45 L70 22 M110 45 L150 22 M110 70 L78 82 M110 70 L145 82" stroke="#b88fa2" stroke-linecap="round" stroke-width="7"></path></svg></div>
-<h3>Stretch &amp; recovery</h3><small>TAP TO UNLOCK PHOTOS</small>
-</div>
-</div>
-<div class="photo-reveal" id="gymGallery">
-<h3 id="gymGalleryTitle">Your workout moments</h3>
-<div class="photo-strip" id="gymPhotos"></div>
-<button class="close-gallery" onclick="closeGallery('gymGallery')">CLOSE PHOTO STORY ×</button>
-</div>
-<div class="gym-board">
-<div class="gym-card"><div class="gym-icon">🏋🏻‍♀️</div><h3>Rep counter</h3><div class="counter" id="reps">0</div><button onclick="addRep()">ADD A REP +</button></div>
-<div class="gym-card"><div class="gym-icon">💧</div><h3>Hydration check</h3><div class="counter" id="water">0 / 8</div><button onclick="addWater()">DRINK WATER</button></div>
-<div class="gym-card"><div class="gym-icon">🏆</div><h3>Daily motivation</h3><p id="motivation">Your strength is your superpower.</p><button onclick="newQuote()">NEW MOTIVATION</button></div>
-</div>
-<div class="message show">My favourite thing isn't your strength at the gym — it's the strength you carry in your heart. ♥</div>
-</div>
-</section><section class="section-travel" id="travel">
-<div class="wrap">
-<h2>Let's get lost somewhere beautiful.</h2>
-<p class="lead">Watch our little plane take off. When it reaches the sky, tap it to reveal a surprise. Then choose a destination to open its photo story.</p>
-<div class="plane-stage" id="planeStage">
-<div class="plane-sun"></div><div class="plane-cloud cloud-a"></div><div class="plane-cloud cloud-b"></div>
-<div class="runway"></div>
-<div class="plane-flight" id="plane" title="Our little flight ✈">
-<svg aria-label="Passenger airplane with travel photos in its windows" viewbox="0 0 300 150">
-<defs>
-<lineargradient id="fuselage" x2="0" y2="1"><stop stop-color="#fff"></stop><stop offset=".55" stop-color="#e7eef1"></stop><stop offset="1" stop-color="#b9cbd2"></stop></lineargradient>
-<lineargradient id="wing" x2="0" y2="1"><stop stop-color="#d9e6eb"></stop><stop offset="1" stop-color="#9fb5c0"></stop></lineargradient>
-<clippath id="w1"><rect height="9" rx="4" width="13" x="78" y="66"></rect></clippath><clippath id="w2"><rect height="9" rx="4" width="13" x="99" y="66"></rect></clippath><clippath id="w3"><rect height="9" rx="4" width="13" x="120" y="66"></rect></clippath><clippath id="w4"><rect height="9" rx="4" width="13" x="141" y="66"></rect></clippath><clippath id="w5"><rect height="9" rx="4" width="13" x="162" y="66"></rect></clippath><clippath id="w6"><rect height="9" rx="4" width="13" x="183" y="66"></rect></clippath>
-</defs>
-<path d="M20 75 Q28 58 62 58 L238 58 Q270 60 284 75 Q270 90 238 92 L62 92 Q28 92 20 75Z" fill="url(#fuselage)" stroke="#849eaa" stroke-width="2"></path>
-<path d="M118 62 L165 8 Q171 1 179 6 L164 64Z M118 88 L165 142 Q171 149 179 144 L164 86Z" fill="url(#wing)" stroke="#8fa7b2" stroke-width="2"></path>
-<path d="M38 63 L14 35 Q10 29 18 27 L74 61Z M38 87 L14 115 Q10 121 18 123 L74 89Z" fill="#c7d8de" stroke="#8fa7b2" stroke-width="2"></path>
-<path d="M25 75 Q12 75 3 75 Q12 64 25 65Z" fill="#d5a5b6"></path><path d="M55 65 H238" stroke="#d6a6b8" stroke-width="4"></path>
-<g class="plane-window-photos" opacity="0">
-<image clip-path="url(#w1)" height="11" href="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=200&amp;h=120&amp;fit=crop" width="15" x="77" y="65"/>
-<image clip-path="url(#w2)" height="11" href="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=200&amp;h=120&amp;fit=crop" width="15" x="98" y="65"/>
-<image clip-path="url(#w3)" height="11" href="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=200&amp;h=120&amp;fit=crop" width="15" x="119" y="65"/>
-<image clip-path="url(#w4)" height="11" href="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=200&amp;h=120&amp;fit=crop" width="15" x="140" y="65"/>
-<image clip-path="url(#w5)" height="11" href="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=200&amp;h=120&amp;fit=crop" width="15" x="161" y="65"/>
-<image clip-path="url(#w6)" height="11" href="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=200&amp;h=120&amp;fit=crop" width="15" x="182" y="65"/>
-</g>
-<g fill="#8ba6b2"><path d="M76 67 h13 l-2 7 h-13z"></path><path d="M97 67 h13 l-2 7 h-13z"></path><path d="M118 67 h13 l-2 7 h-13z"></path><path d="M139 67 h13 l-2 7 h-13z"></path><path d="M160 67 h13 l-2 7 h-13z"></path><path d="M181 67 h13 l-2 7 h-13z"></path></g>
-<path d="M210 92 L226 109 L232 109 L229 91" fill="#9fb5c0" stroke="#849eaa" stroke-width="2"></path><circle cx="234" cy="76" fill="#d7b58b" r="5"></circle>
-</svg>
-</div>
-<div class="plane-hint" id="planeHint">BOARDING · WATCH THE TAKEOFF ✈</div>
-</div>
-<div class="plane-surprise" id="planeSurprise">You clicked the little plane… ✨<br/>Imagine us flying away together, collecting sunsets and memories in every corner of the world. ♥</div>
-<div class="photo-reveal" id="planeGallery">
-<h3>Our sky-high daydreams ✈</h3>
-<div class="photo-strip" id="planePhotos"></div>
-<button class="close-gallery" onclick="closeGallery('planeGallery')">CLOSE PHOTO STORY ×</button>
-</div>
-<div class="destination-grid">
-<div class="destination" id="beachCard" onclick="openDestination('beach')">
-<svg viewbox="0 0 400 190"><rect fill="#d9edf0" height="190" width="400"></rect><circle cx="310" cy="48" fill="#f3d4a9" r="27"></circle><path d="M0 100 Q110 60 210 100 T400 95 V190 H0Z" fill="#a9d3d4"></path><path d="M0 125 Q100 100 200 130 T400 120 V190 H0Z" fill="#f1ddbd"></path><path d="M40 190 Q70 130 110 145 Q140 150 160 190" fill="#e6cba9"></path></svg>
-<div><b>Beach escapes</b><p>Sunsets &amp; sea breeze</p><span class="open-label">TAP TO OPEN PHOTO ALBUM ↓</span></div>
-</div>
-<div class="destination" id="mountainCard" onclick="openDestination('mountain')">
-<svg viewbox="0 0 400 190"><rect fill="#e8e9f0" height="190" width="400"></rect><circle cx="320" cy="40" fill="#f4dfbd" r="25"></circle><path d="M0 170 L110 40 L220 170Z" fill="#b8b7ca"></path><path d="M110 40 L145 90 L120 80 L105 96 L90 78Z" fill="#fff"></path><path d="M140 170 L270 20 L400 170Z" fill="#a8c2bb"></path><path d="M270 20 L300 68 L275 60 L260 78 L248 62Z" fill="#fff"></path><path d="M0 170 Q120 145 220 175 T400 170 V190 H0Z" fill="#c9dfcf"></path></svg>
-<div><b>Mountain adventures</b><p>Clouds &amp; quiet roads</p><span class="open-label">TAP TO OPEN PHOTO ALBUM ↓</span></div>
-</div>
-</div>
-<div class="sea-album" id="seaAlbum">
-<h3 style="text-align:center;font-weight:400;margin:4px 0 14px">A little ocean daydream 🌊</h3>
-<div class="sea-scene">
-<div class="sea-sun"></div>
-<div class="sea-wave one"></div><div class="sea-wave two"></div><div class="sea-wave three"></div>
-</div>
-<div class="sea-caption">Every wave brings another little memory…</div>
-<div class="wave-photo-row" id="seaPhotos"></div>
-<button class="close-gallery" onclick="closeGallery('seaAlbum')">CLOSE BEACH STORY ×</button>
-</div>
-<div class="photo-reveal" id="destinationGallery">
-<h3 id="destinationTitle">A little escape</h3>
-<div class="photo-strip" id="destinationPhotos"></div>
-<button class="close-gallery" onclick="closeGallery('destinationGallery')">CLOSE PHOTO STORY ×</button>
-</div>
-</div>
-</section><section class="light" id="gift"><div class="wrap"><div class="eyebrow">A little something, wrapped with love</div><h2 class="headline">I got you a surprise</h2><div aria-label="Open the gift box" class="gift-scene" id="giftScene" role="button" tabindex="0"><div class="gift-box"></div><div class="gift-lid"></div><div class="gift-bow">🎀</div><div class="gift-sparkles" id="giftSparkles">✦　✧　✦</div></div><div class="gift-hint" id="giftHint">Tap the gift box to open it</div><p class="copy">It's not about what's inside. It's about the person I get to give it to.</p><label class="upload-label">Add your surprise video <input accept="video/*" id="surpriseVideoUpload" type="file"/></label><button class="btn" disabled="" id="giftContinue" onclick="go('envelope')">Open the next page</button></div></section>
-<section id="envelope"><div class="wrap"><div class="eyebrow">Something I wrote just for you</div><h2 class="headline" style="color:#96385f">A letter, sealed<br/><span class="script">just for you</span></h2><p class="copy">A few words from my heart. Tap the envelope to open it.</p><div aria-label="Open sealed love letter" class="envelope" id="envelopeArt" role="button" tabindex="0"><div class="envelope-back"></div><div class="envelope-paper"><strong>Hey love ♥</strong><p>I don't think I tell you this enough, but meeting you has been one of the best things that's ever happened to me.</p></div><div class="envelope-flap"></div><div class="wax">♥</div></div><button class="btn" id="readLetterButton">Read your letter</button></div></section>
-<section class="letter-page" id="letter"><div class="wrap"><div class="eyebrow">Written with all my love</div><h2 class="headline" style="color:#96385f">A letter for you</h2><div class="letter-paper"><h3 id="letterHeading">Hey love ♥</h3><p id="letterText">I don't think I tell you this enough, but meeting you has been one of the best things that's ever happened to me.\n\nThank you for being patient with me, making me laugh, listening to my endless talks, and loving me even on the days I'm difficult.\n\nNo matter how busy life gets, I hope you always remember one thing... you'll always be my favorite person.\n\nI love you more than words can ever explain. ❤️</p><div class="letter-sign" id="signature">Yours, always</div></div><div class="audio-panel"><div class="playicon">♫</div><div class="serif" style="color:#99436a;font-size:20px">Hear me say it</div><p style="font-size:12px;color:#9a7888">A voice message, just for you</p><input accept="audio/*" aria-label="Choose voice note" id="audioUpload" type="file"/><audio controls="" hidden="" id="voicePlayer"></audio></div><button class="btn" onclick="go('promises')" style="margin-top:25px">One last thing…</button></div></section>
-<section id="promises"><div class="wrap"><div class="eyebrow">A little promise between us</div><h2 class="headline" style="color:#96385f">Tick the ones<br/>you'll hold on to</h2><p class="copy">A few little promises for the days ahead. Choose the ones that mean something to you.</p><div class="promise-card" id="promiseList">
-<label><input type="checkbox"/><span>We will always make time to listen to each other.</span></label>
-<label><input type="checkbox"/><span>We will keep laughing, even at the silly things.</span></label>
-<label><input type="checkbox"/><span>We will be honest, patient and kind with each other.</span></label>
-<label><input type="checkbox"/><span>We will celebrate the little wins together.</span></label>
-<label><input type="checkbox"/><span>We will keep choosing each other, every day.</span></label></div><button class="btn" onclick="savePromises()">I promise ♥</button><div aria-live="polite" class="promise-result" id="promiseResult"></div><button class="btn ghost" onclick="go('final')" style="margin-top:12px">See the final surprise</button></div></section>
-<section class="last-scene" id="final">
-<div class="final-content">
-<div class="final-kicker">If I could choose a thousand times...</div>
-<div class="final-stage">
-<div class="final-orbit"></div>
-<span class="final-star" style="top:15%;left:14%;font-size:19px">✦</span>
-<span class="final-star" style="top:22%;right:13%;font-size:13px">✧</span>
-<span class="final-star" style="bottom:18%;left:19%;font-size:15px">✧</span>
-<span class="final-star" style="bottom:13%;right:18%;font-size:20px">✦</span>
-<button aria-label="Tap the glowing heart" class="last-heart" id="finalHeart">♥</button>
-</div>
-<div class="last-word">In every lifetime,<br/>I'd find you.</div>
-<p class="last-copy">Not just for the perfect days. For the silly days, the quiet days, the difficult days — and every ordinary moment in between. You are my once-in-a-lifetime kind of love.</p>
-<button class="last-button" id="finalButton">MAKE ONE LAST WISH ✨</button>
-<div aria-live="polite" class="last-reveal" id="finalReveal">If the whole world started over, I would still look for you.<br/><br/>And when I found you, I would choose you all over again.<br/><br/><b>Always yours. ♥</b></div>
-</div>
-</section>
-<div aria-hidden="true" class="video-overlay" id="videoOverlay"><div class="flower-rain" id="flowerRain"></div><video id="surpriseVideo" playsinline=""></video><div class="video-message" id="videoMessage">A little surprise, just for you ♥</div><button class="btn video-close" id="videoClose" type="button">Close video</button></div>
-</main>
-<footer>Made with love, just for you ♥</footer>
-<script>
-function showMsg(id,text){const el=document.getElementById(id);el.textContent=text;el.classList.add('show');}
-const mall=document.getElementById('mallScene');
-const planeObserver=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting&&!planeSequenceStarted){planeSequenceStarted=true;plane.style.animation='planeTakeoff 7.5s cubic-bezier(.22,.72,.2,1) forwards';planeObserver.disconnect();}})},{threshold:.25});
-planeObserver.observe(document.getElementById('planeStage'));
-document.getElementById('openMall').addEventListener('click',()=>{
-  mall.classList.add('mall-open');
-  const button=document.getElementById('openMall');
-  button.textContent='WELCOME INSIDE ✨';
-  button.disabled=true;
-});
-let reps=0,water=0;
-function addRep(){reps++;document.getElementById('reps').textContent=reps;}
-function addWater(){water=Math.min(8,water+1);document.getElementById('water').textContent=water+' / 8';}
-const quotes=['Your strength is your superpower.','Consistency makes the magic happen.','Strong mind. Strong body. Strong heart.','One more rep, one more reason to be proud.'];
-let qi=0;function newQuote(){qi=(qi+1)%quotes.length;document.getElementById('motivation').textContent=quotes[qi];}
-const gymSets={
- weights:{title:'Power in every rep',photos:[['Strength session','https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800'],['Dumbbell day','https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800'],['Training focus','https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800']]},
- treadmill:{title:'One step at a time',photos:[['Cardio energy','https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=800'],['Run your own race','https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800'],['Keep moving','https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800']]},
- yoga:{title:'Stretch, breathe, reset',photos:[['Find your balance','https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800'],['A moment to reset','https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800'],['Mind and body','https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800']]}
-};
-function renderPhotos(target,items){target.innerHTML='';items.forEach((item,i)=>{const tile=document.createElement('div');tile.className='photo-tile';tile.style.setProperty('--delay',(i*.65)+'s');tile.innerHTML='<img loading="lazy" src="'+item[1]+'" alt="'+item[0]+'" onerror="this.style.display=\'none\';this.parentElement.insertAdjacentHTML(\'afterbegin\',\'<div style=&quot;height:190px;border-radius:17px;background:linear-gradient(135deg,#eadde9,#d9e9e2);display:grid;place-items:center;color:#8b7181&quot;>A lovely memory ♥</div>\')"><p>'+item[0]+'</p>';target.appendChild(tile);});}
-function openGymGallery(type){const set=gymSets[type];document.getElementById('gymGalleryTitle').textContent=set.title;renderPhotos(document.getElementById('gymPhotos'),set.photos);document.getElementById('gymGallery').classList.add('show');document.getElementById('gymGallery').scrollIntoView({behavior:'smooth',block:'nearest'});}
-function closeGallery(id){document.getElementById(id).classList.remove('show');}
-const beachPhotos=[['Golden hour by the sea','https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900'],['Turquoise water','https://images.unsplash.com/photo-1519046904884-53103b34b206?w=900'],['A quiet beach day','https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=900']];
-const mountainPhotos=[['Above the clouds','https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900'],['Mountain road trip','https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900'],['The peaceful peaks','https://images.unsplash.com/photo-1464278533981-50106e6176b1?w=900']];
-function openDestination(kind){const isBeach=kind==='beach';document.getElementById('beachCard').classList.toggle('open',isBeach);document.getElementById('mountainCard').classList.toggle('open',!isBeach);if(isBeach){closeGallery('destinationGallery');renderSeaPhotos();document.getElementById('seaAlbum').classList.add('show');document.getElementById('seaAlbum').scrollIntoView({behavior:'smooth',block:'nearest'});}else{closeGallery('seaAlbum');document.getElementById('destinationTitle').textContent='Mountain air & cosy adventures';renderPhotos(document.getElementById('destinationPhotos'),mountainPhotos);document.getElementById('destinationGallery').classList.add('show');document.getElementById('destinationGallery').scrollIntoView({behavior:'smooth',block:'nearest'});}}
-const seaPhotoData=[['First wave · salty breeze','https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900'],['Second wave · turquoise dreams','https://images.unsplash.com/photo-1519046904884-53103b34b206?w=900'],['Third wave · golden hour','https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=900']];
-function renderSeaPhotos(){const root=document.getElementById('seaPhotos');root.innerHTML='';seaPhotoData.forEach((item,i)=>{const tile=document.createElement('div');tile.className='wave-photo';tile.style.setProperty('--delay',(i*1.1)+'s');tile.innerHTML='<img loading="lazy" src="'+item[1]+'" alt="'+item[0]+'" onerror="this.style.display=\'none\'"><p>'+item[0]+'</p>';root.appendChild(tile);});}
-let planeReady=false; let planeSequenceStarted=false;
-const plane=document.getElementById('plane');
-plane.addEventListener('animationend',(event)=>{if(event.animationName==='planeTakeoff'||event.animationName==='planeTakeoffMobile'){planeReady=true;document.getElementById('planeHint').textContent='A LITTLE SURPRISE IS COMING CLOSER… ✨';setTimeout(()=>plane.classList.add('zoom-final'),650);}else if(event.animationName==='planeZoomClose'||event.animationName==='planeZoomCloseMobile'){document.getElementById('planeHint').textContent='LOOK THROUGH THE WINDOWS ♥';document.getElementById('planeSurprise').classList.add('show');renderPhotos(document.getElementById('planePhotos'),[['Cloud nine','https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900'],['Window seat views','https://images.unsplash.com/photo-1500534623283-312aade485b7?w=900'],['Somewhere beautiful','https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=900']]);document.getElementById('planeGallery').classList.add('show');}});
-let planeClicked=false;</script>
-<script id="fx-script">
-(function(){
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const rnd=(a,b)=>a+Math.random()*(b-a);
-const cols=['#e48fa9','#f3b3c6','#c9b3e6','#f2cf8e','#9fd1c4'];
-const $=id=>document.getElementById(id);
 
-/* Heart / sparkle burst */
-function burst(x,y,n,spread,chs){
- if(reduce)return;n=n||8;spread=spread||70;chs=chs||['♥','✦','♡'];
- for(let i=0;i<n;i++){
-  const p=document.createElement('span');p.className='fx-p';p.textContent=chs[i%chs.length];
-  const a=Math.random()*Math.PI*2,d=rnd(spread*.4,spread);
-  p.style.cssText='--x:'+x+'px;--y:'+y+'px;--dx:'+(Math.cos(a)*d)+'px;--dy:'+(Math.sin(a)*d-rnd(10,40))+'px;--r:'+rnd(-90,90)+'deg;--s:'+rnd(11,22)+'px;--c:'+cols[i%cols.length]+';--t:'+rnd(.8,1.4)+'s';
-  document.body.appendChild(p);setTimeout(()=>p.remove(),1500);
- }
-}
-function celebrate(id){const r=$(id).getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,26,170,['♥','✦','❀','♡']);}
+<style id="birthday-video-overlay-fix">
+.video-overlay{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(12,5,11,.94);}
+.video-overlay.active{display:flex;}
+.video-overlay-card{position:relative;width:min(920px,100%);max-height:92svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px 16px;border:1px solid rgba(255,190,215,.45);border-radius:22px;background:linear-gradient(145deg,#321326,#130a13);box-shadow:0 20px 80px #0009;overflow:hidden;}
+.video-overlay video{position:relative;z-index:2;display:block;width:100%;max-height:72svh;object-fit:contain;border-radius:12px;background:#050505;}
+.video-message{position:relative;z-index:3;margin:12px 42px 4px;color:#ffe0ec;text-align:center;font:500 16px/1.5 'DM Sans',sans-serif;}
+.video-close{position:absolute;z-index:5;top:10px;right:12px;width:42px;height:42px;border:1px solid #f5b6ce;border-radius:50%;background:#41172e;color:#fff;font-size:28px;line-height:1;cursor:pointer;}
+.flower-rain{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;}
+.flower-rain span{position:absolute;top:-55px;font-size:var(--size,26px);animation:flowerDrop var(--duration,3s) linear forwards;}
+@keyframes flowerDrop{to{transform:translate3d(var(--drift,0px),110svh,0) rotate(420deg);opacity:.15}}
+@media(max-width:600px){.video-overlay{padding:8px}.video-overlay-card{width:100%;max-height:96svh;padding:54px 10px 14px;border-radius:16px}.video-overlay video{max-height:76svh}.video-message{font-size:14px}}
+#added-pages{overflow-x:hidden;}
+#added-pages img, #added-pages video{max-width:100%;}
+#added-pages button,#added-pages [role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:transparent;}
+</style>
+<style>.image-fallback{min-height:190px;background:linear-gradient(135deg,#eadde9,#d9e9e2);display:grid;place-items:center;color:#8b7181}.image-fallback:before{content:"A lovely memory ♥";font:italic 18px Georgia,serif}</style></head>
+<body>
 
-/* Click hearts + mouse sparkle trail */
-document.addEventListener('click',e=>{const hot=e.target.closest('button,.hotspot,.item,.equipment,.destination,#plane');burst(e.clientX,e.clientY,hot?10:5,hot?90:55);});
-let lt=0;
-addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'||reduce)return;const t=performance.now();if(t-lt<70)return;lt=t;burst(e.clientX,e.clientY,1,18,['✦','♥']);});
 
-/* Scroll progress bar */
-const bar=document.createElement('div');bar.id='fxProgress';document.body.prepend(bar);
-let tick=false;
-function prog(){const h=document.documentElement.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?Math.min(1,scrollY/h):0)+')';tick=false;}
-addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(prog);}},{passive:true});prog();
 
-/* Floating hearts background */
-if(!reduce){
- const L=document.createElement('div');L.className='fx-layer';
- const chars=['♥','♡','✦','✧','❀'],N=innerWidth<650?9:16;
- for(let i=0;i<N;i++){const s=document.createElement('span');s.className='fx-float';s.textContent=chars[i%chars.length];
-  s.style.cssText='--l:'+rnd(0,98)+'%;--s:'+rnd(10,24)+'px;--c:'+cols[i%cols.length]+';--d:'+rnd(16,30)+'s;--dl:-'+rnd(0,26)+'s;--sw:'+rnd(-80,80)+'px;--r:'+rnd(-120,120)+'deg';L.appendChild(s);}
- document.body.appendChild(L);
-}
 
-/* Scroll reveal (elements are only hidden once JS has tagged them) */
-if('IntersectionObserver' in window){
- const sel=['.wrap>.eyebrow','.wrap>h1','.wrap>h2','.wrap>.lead','.scene','.shop-grid .item','.gym-equipment .equipment','.gym-board .gym-card','.destination','.plane-stage','.wrap>.pill'].map(s=>'section:not(.hero) '+s).join(',');
- const io=new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target);}});},{threshold:.12});
- document.querySelectorAll(sel).forEach(el=>{
-  el.classList.add('reveal');
-  el.style.setProperty('--rd',Math.min(.6,[...el.parentElement.children].indexOf(el)*.12)+'s');
-  io.observe(el);
- });
-}
 
-/* SVG extras: drifting clouds + JCB arm */
-const NS='http://www.w3.org/2000/svg';
-const cs=document.querySelector('#construction svg');
-if(cs){
- const sun=cs.querySelector(':scope>circle');
- [[130,60,1.1],[560,105,.8]].forEach((c,i)=>{
-  const o=document.createElementNS(NS,'g');o.setAttribute('transform','translate('+c[0]+' '+c[1]+') scale('+c[2]+')');o.setAttribute('pointer-events','none');
-  o.innerHTML='<g class="fx-svg-cloud" style="animation-duration:'+(18+i*7)+'s;animation-delay:-'+(i*5)+'s"><g fill="#fff" opacity=".8"><ellipse rx="34" ry="11"/><ellipse cx="-14" cy="-8" rx="16" ry="12"/><ellipse cx="10" cy="-11" rx="19" ry="14"/></g></g>';
-  cs.insertBefore(o,sun);
- });
- const jcb=cs.querySelectorAll('.hotspot')[2];
- if(jcb){const ps=jcb.querySelectorAll('path');if(ps.length>=2){const g=document.createElementNS(NS,'g');g.setAttribute('class','jcb-arm');jcb.insertBefore(g,ps[0]);g.appendChild(ps[0]);g.appendChild(ps[1]);}}
-}
 
-/* Mall door-open sparkles */
-const mall=$('mallScene');
-if(mall)new MutationObserver((m,o)=>{if(mall.classList.contains('mall-open')){o.disconnect();setTimeout(()=>{const r=mall.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height*.55,22,170,['✦','♥','✧']);},700);}}).observe(mall,{attributes:true,attributeFilter:['class']});
 
-/* Gym: safe wrappers around existing functions */
-function bump(id){const e=$(id);e.classList.remove('bump');void e.offsetWidth;e.classList.add('bump');}
-const _ar=window.addRep,_aw=window.addWater,_nq=window.newQuote,_sm=window.showMsg;
-window.addRep=function(){_ar();bump('reps');if(reps%10===0)celebrate('reps');};
-window.addWater=function(){_aw();bump('water');if(water===8)celebrate('water');};
-window.newQuote=function(){_nq();const m=$('motivation');m.classList.remove('swap');void m.offsetWidth;m.classList.add('swap');};
-window.showMsg=function(id,t){const el=$(id);el.classList.remove('show');void el.offsetWidth;_sm(id,t);const r=el.getBoundingClientRect();if(r.bottom>innerHeight-10||r.top<0)el.scrollIntoView({behavior:'smooth',block:'nearest'});};
 
-/* Travel: extra clouds, plane starts when visible, plane is tappable */
-const ps=$('planeStage'),pl=$('plane');
-if(ps&&pl){
- [['52%','14%',.6,'24s'],['2%','60%',.55,'30s'],['34%','8%',.5,'27s']].forEach(c=>{
-  const d=document.createElement('div');d.className='plane-cloud';d.style.cssText='left:'+c[0]+';top:'+c[1]+';transform:scale('+c[2]+');animation-duration:'+c[3]+';opacity:.8';
-  ps.insertBefore(d,ps.querySelector('.runway'));
- });
- if('IntersectionObserver' in window)new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting){pl.classList.add('go');o.disconnect();}});},{threshold:.25}).observe(ps);
- else pl.classList.add('go');
- pl.addEventListener('click',()=>{$('planeSurprise').classList.add('show');const r=pl.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,16,120,['♥','✦','☁']);});
-}
 
-/* Sea album: sailboat + seagulls */
-const sea=document.querySelector('.sea-scene');
-if(sea)sea.insertAdjacentHTML('beforeend','<div class="fx-boat"><svg viewBox="0 0 80 70"><path d="M40 4V48" stroke="#9a8190" stroke-width="2.5"/><path d="M43 7L68 42H43Z" fill="#fff"/><path d="M37 15L16 42H37Z" fill="#ffeef2"/><path d="M10 47H70L61 62H20Z" fill="#e8bdc8" stroke="#b98c9d" stroke-width="2"/></svg></div>'+
- ['12%;--gd:16s;--gdl:0s','24%;--gd:21s;--gdl:-8s'].map(v=>'<div class="fx-gull" style="--gt:'+v+'"><svg viewBox="0 0 32 14"><path d="M1 12Q8 0 16 9Q24 0 31 12" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg></div>').join(''));
-
-/* Finale hearts */
-const fh=document.querySelector('.final-heart');
-if(fh&&'IntersectionObserver' in window)new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting){o.disconnect();const r=fh.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,20,200,['♥','❀','✦','♡']);}});},{threshold:.6}).observe(fh);
-const endBtn=document.querySelector('.section-end .pill');
-if(endBtn)endBtn.addEventListener('click',e=>burst(e.clientX,e.clientY,28,200,['♥','✦','❀','♡']));
-})();
-</script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&amp;family=Great+Vibes&amp;display=swap" rel="stylesheet"/><style id="added-pages-styles">
 
 #added-pages{--pink:#ff4f9a;--hot:#ff267e;--rose:#bd245e;--cream:#fff1e9;--ink:#180d16;--gold:#f5b85c;--muted:#b99eaa}#added-pages *{box-sizing:border-box}#added-pages{scroll-behavior:smooth;scroll-snap-type:y proximity}#added-pages{margin:0;background:#090609;color:#fff;font-family:"DM Sans",sans-serif;overflow-x:hidden}#added-pages button,#added-pages input{font:inherit}#added-pages button{cursor:pointer}#added-pages section{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:72px 22px;overflow:hidden;scroll-snap-align:start}#added-pages .wrap{width:min(900px,100%);margin:auto;position:relative;z-index:2;text-align:center}#added-pages .eyebrow{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#d98aa9}#added-pages .script{font-family:"Great Vibes",cursive;font-weight:400}#added-pages .serif{font-family:"Playfair Display",serif}#added-pages .headline{font-family:"Playfair Display",serif;font-weight:500;font-size:clamp(38px,7vw,72px);line-height:1.08;margin:12px 0;color:#fff}#added-pages .copy{max-width:570px;margin:16px auto 28px;color:#cdb8c3;font-size:15px;line-height:1.9}#added-pages .btn{border:1px solid #ff7bb0;background:linear-gradient(120deg,#ff5da1,#d82975);color:white;border-radius:999px;padding:13px 24px;font-size:12px;font-weight:700;letter-spacing:.08em;box-shadow:0 8px 30px #ed347344;transition:.25s}#added-pages .btn:hover{transform:translateY(-3px);box-shadow:0 12px 36px #ed347366}#added-pages .btn.ghost{background:transparent;border-color:#a65c7b;color:#ffd4e5;box-shadow:none}#added-pages .btn.dark{background:#1b1019;border-color:#6e3c55}#added-pages .dots{position:fixed;right:17px;top:50%;transform:translateY(-50%);z-index:20;display:grid;gap:9px}#added-pages .dots a{width:6px;height:6px;border-radius:50%;background:#bd8da2;opacity:.45;display:block}#added-pages .dots a:hover{opacity:1;background:#ff6da7}#added-pages .skip{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#a78b9a}
@@ -886,123 +573,351 @@ if(endBtn)endBtn.addEventListener('click',e=>burst(e.clientX,e.clientY,28,200,['
 
 #added-pages{display:block;position:relative;background:#090609;color:#fff;font-family:"DM Sans",sans-serif;overflow:hidden;}
 #added-pages .page-number{z-index:15}
+</style><footer>Made with love, just for you ♥</footer><style id="page-order-layout-fix">
+/* Keep the appended-page styling scope while allowing all sections to flow in order. */
+#added-pages{display:contents!important;position:static!important;overflow:visible!important;background:transparent!important}
+</style><main aria-label="Additional romantic surprise pages" id="added-pages"><section id="opening"><div class="opening-glow"></div><div class="wrap"><div class="opening-target"><div aria-label="Glowing pink heart" class="heart3d" id="heartTarget"></div><div class="hit-burst" id="hitBurst">♥</div></div><div aria-live="polite" class="birthday-message" id="birthdayMessage">Happy Birthday Baby</div><div class="arrow-instruction" id="arrowInstruction">Drag the arrow anywhere</div><button aria-label="Drag arrow to heart" class="shoot-arrow" id="shootArrow">➶</button><div class="eyebrow">someone made this, just for you</div><h1 class="headline">A little surprise<br><span class="script" style="color:#ff75aa">from my heart</span></br></h1><p class="copy">A tiny world, made with love. Take your time and enjoy every little moment.</p><button class="btn" onclick="go('gift')" style="margin-top:18px;position:relative;z-index:3" type="button">Continue to your surprise ↓</button></div><div class="skip">Scroll to begin ↓</div></section><section class="section-civil" id="civil">
+<div class="wrap">
+<div class="center eyebrow">Chapter 01 · The creator</div>
+<h2>She builds dreams.</h2>
+<p class="lead">From tiny details to big structures — you have the mind of an engineer and the heart of an artist. Tap the little details in your construction site.</p>
+<div class="scene" id="construction">
+<svg aria-label="Pastel construction site illustration" role="img" viewbox="0 0 820 390">
+<defs><lineargradient id="sky" x2="0" y2="1"><stop stop-color="#eaf2f1"></stop><stop offset="1" stop-color="#fff4e8"></stop></lineargradient></defs>
+<rect fill="url(#sky)" height="390" rx="20" width="820"></rect>
+<circle cx="690" cy="65" fill="#f4dcae" r="34"></circle>
+<path d="M0 320 Q180 295 360 320 T820 315 V390 H0Z" fill="#cbded2"></path>
+<g class="hotspot" onclick="showMsg('civilMsg','Even the strongest bridges need a beautiful reason to connect two hearts. ♥')">
+<path d="M55 286 Q205 75 410 286 Q615 75 765 286" fill="none" stroke="#b88d86" stroke-width="12"></path>
+<path d="M55 286 H765" stroke="#d6b5ad" stroke-width="17"></path>
+<path d="M110 286 L110 320 M210 210 L210 320 M310 210 L310 320 M510 210 L510 320 M610 210 L610 320 M710 286 L710 320" stroke="#c69b91" stroke-width="8"></path>
+<text fill="#886b70" font-size="15" text-anchor="middle" x="410" y="350">TAP THE BRIDGE</text>
+</g>
+<g class="hotspot" onclick="showMsg('civilMsg','You turn plans into places, and ordinary spaces into something extraordinary. 🏡')">
+<rect fill="#f0cfc8" height="160" rx="5" stroke="#b98b87" stroke-width="4" width="150" x="325" y="145"></rect>
+<path d="M305 150 L400 75 L495 150Z" fill="#cba6b3" stroke="#a87e8b" stroke-width="5"></path>
+<rect fill="#b4c9ca" height="80" width="42" x="380" y="225"></rect><rect fill="#dcebea" height="34" width="34" x="343" y="175"></rect><rect fill="#dcebea" height="34" width="25" x="435" y="175"></rect>
+<text fill="#fff" font-size="13" text-anchor="middle" x="400" y="130">TAP THE HOUSE</text>
+</g>
+<g class="hotspot" onclick="showMsg('civilMsg','A little JCB energy: you move obstacles, make progress, and get things done. 💛')">
+<rect fill="#e9c66f" height="52" rx="14" stroke="#b58e4c" stroke-width="4" width="135" x="70" y="250"></rect>
+<rect fill="#f5df9e" height="45" rx="7" stroke="#b58e4c" stroke-width="4" width="55" x="110" y="210"></rect>
+<path d="M165 220 L215 170 L228 180 L190 240" fill="none" stroke="#c49b50" stroke-linecap="round" stroke-width="13"></path>
+<path d="M220 175 L250 190 L235 218 L208 200Z" fill="#d4ad60" stroke="#a9803e" stroke-width="4"></path>
+<circle cx="100" cy="306" fill="#7d7776" r="17"></circle><circle cx="178" cy="306" fill="#7d7776" r="17"></circle>
+<text fill="#886b70" font-size="13" text-anchor="middle" x="135" y="340">TAP THE JCB</text>
+</g>
+<g class="hotspot" onclick="showMsg('civilMsg','Your hard hat protects your head, but your kindness is what makes you special. ✨')">
+<path d="M585 170 Q590 105 650 105 Q710 105 715 170Z" fill="#f0cf83" stroke="#b18c55" stroke-width="5"></path><path d="M575 170 H725" stroke="#b18c55" stroke-linecap="round" stroke-width="12"></path>
+<text fill="#886b70" font-size="13" text-anchor="middle" x="650" y="195">TAP THE HELMET</text>
+</g>
+</svg>
+<div class="tap-note">Tap the bridge · house · JCB · helmet</div>
+<div class="message" id="civilMsg"></div>
+</div>
+</div>
+</section><section class="section-mall" id="mall">
+<div class="wrap">
+<div class="center eyebrow">Chapter 02 · The style icon</div>
+<h2>Her pastel boutique.</h2>
+<p class="lead">Your own little mall — because shopping is not a hobby, it's an experience. Scroll here and let the doors open.</p>
+<div class="scene" id="mallScene">
+<svg aria-label="Pastel shopping mall entrance" viewbox="0 0 820 360">
+<rect fill="#f8e9e9" height="360" rx="18" width="820"></rect>
+<circle cx="700" cy="65" fill="#f2d7b9" r="35"></circle>
+<path d="M90 320 V110 Q90 65 135 65 H685 Q730 65 730 110 V320Z" fill="#e7c9d2" stroke="#b98c9d" stroke-width="5"></path>
+<path d="M60 120 H760 V155 H60Z" fill="#d8b8c7"></path>
+<text fill="#805f70" font-size="27" letter-spacing="5" text-anchor="middle" x="410" y="105">THE PASTEL MALL</text>
+<g class="inside-glow"><rect fill="#fff5d9" height="170" width="250" x="285" y="150"></rect><path d="M300 290 H520" stroke="#e8c9b8" stroke-width="5"></path><circle cx="410" cy="205" fill="#f4d9b8" r="38"></circle></g>
+<g class="mall-door door-left"><rect fill="#d9e6e2" height="170" stroke="#9bb9b2" stroke-width="5" width="125" x="285" y="150"></rect><circle cx="390" cy="238" fill="#b18a72" r="5"></circle></g>
+<g class="mall-door door-right"><rect fill="#e7d8ed" height="170" stroke="#b49dbf" stroke-width="5" width="125" x="410" y="150"></rect><circle cx="430" cy="238" fill="#b18a72" r="5"></circle></g>
+<text fill="#886b70" font-size="13" text-anchor="middle" x="410" y="345">YOUR VERY OWN SHOPPING PARADISE</text>
+</svg>
+<div class="mall-controls"><button class="pill" id="openMall">OPEN THE MALL ✨</button></div>
+</div>
+<div class="shop-grid">
+<div class="item" onclick="showMsg('shopMsg','MRP: One million smiles. This outfit is sponsored by your amazing style. 💗')">
+<svg viewbox="0 0 150 130"><path d="M48 20 L65 10 H85 L102 20 L130 40 L111 65 L98 55 V120 H52 V55 L39 65 L20 40Z" fill="#e9cbd9" stroke="#bd9aaa" stroke-width="3"></path><path d="M65 10 Q75 38 85 10" fill="none" stroke="#bd9aaa" stroke-width="3"></path></svg><p>Blush pink top</p><small>TAP FOR PRICE ♥</small>
+</div>
+<div class="item" onclick="showMsg('shopMsg','MRP: 100 hugs from me. These lavender vibes are priceless. 💜')">
+<svg viewbox="0 0 150 130"><path d="M45 12 H105 L115 120 H35Z" fill="#d9d1eb" stroke="#a99bbb" stroke-width="3"></path><path d="M45 12 Q75 35 105 12" fill="none" stroke="#a99bbb" stroke-width="3"></path></svg><p>Lavender dress</p><small>TAP FOR PRICE ♥</small>
+</div>
+<div class="item" onclick="showMsg('shopMsg','MRP: Unlimited compliments. You would make this mint look even prettier. 🌿')">
+<svg viewbox="0 0 150 130"><path d="M50 15 H100 L110 45 L100 120 H50 L40 45Z" fill="#cfe3d8" stroke="#9cbcae" stroke-width="3"></path><path d="M50 15 L75 38 L100 15" fill="none" stroke="#9cbcae" stroke-width="3"></path></svg><p>Mint co-ord</p><small>TAP FOR PRICE ♥</small>
+</div>
+<div class="item" onclick="showMsg('shopMsg','MRP: One date night with me. The best accessory is your smile. ✨')">
+<svg viewbox="0 0 150 130"><path d="M35 48 L62 20 H95 L120 48 L105 115 H45Z" fill="#f2ddc8" stroke="#c6a88f" stroke-width="3"></path><path d="M62 20 Q75 50 95 20" fill="none" stroke="#c6a88f" stroke-width="3"></path></svg><p>Peach party dress</p><small>TAP FOR PRICE ♥</small>
+</div>
+</div>
+<div class="message" id="shopMsg"></div>
+</div>
+</section><section class="section-gym" id="gym">
+<div class="wrap">
+<div class="center eyebrow">Chapter 03 · The powerhouse</div>
+<h2>Strong looks good on you.</h2>
+<p class="lead">Tap any piece of equipment to unlock a little gym photo story. Each picture arrives one by one — just like every rep builds strength.</p>
+<div class="gym-equipment">
+<div class="equipment" onclick="openGymGallery('weights')">
+<div class="equipment-art"><svg viewbox="0 0 220 120"><g stroke="#947f9a" stroke-linecap="round" stroke-width="8"><path d="M60 60 H160"></path><path d="M48 35 V85 M65 27 V93 M155 27 V93 M172 35 V85"></path></g><g fill="#d5bfdc" stroke="#a991b3" stroke-width="3"><rect height="44" rx="7" width="22" x="31" y="38"></rect><rect height="44" rx="7" width="22" x="167" y="38"></rect></g><path d="M95 49 Q110 32 125 49" fill="none" stroke="#c99fb4" stroke-width="3"></path></svg></div>
+<h3>Dumbbells &amp; weights</h3><small>TAP TO UNLOCK PHOTOS</small>
+</div>
+<div class="equipment" onclick="openGymGallery('treadmill')">
+<div class="equipment-art"><svg viewbox="0 0 220 120"><path d="M65 28 L92 88 H183" fill="none" stroke="#9e8a9e" stroke-linecap="round" stroke-width="9"></path><path d="M85 90 H190" stroke="#c6a9c3" stroke-linecap="round" stroke-width="13"></path><path d="M66 27 H115" stroke="#9e8a9e" stroke-linecap="round" stroke-width="8"></path><circle cx="91" cy="100" fill="#d7bfdc" r="8"></circle><circle cx="181" cy="100" fill="#d7bfdc" r="8"></circle><rect fill="#d7e8df" height="20" rx="5" stroke="#9db6a8" stroke-width="3" width="35" x="57" y="15"></rect></svg></div>
+<h3>Treadmill time</h3><small>TAP TO UNLOCK PHOTOS</small>
+</div>
+<div class="equipment" onclick="openGymGallery('yoga')">
+<div class="equipment-art"><svg viewbox="0 0 220 120"><rect fill="#cbb9dc" height="19" rx="9" width="170" x="25" y="78"></rect><path d="M110 76 Q80 58 95 35 Q110 18 128 36 Q141 55 110 76Z" fill="#e8c5d0" stroke="#b88fa2" stroke-width="3"></path><path d="M110 45 L70 22 M110 45 L150 22 M110 70 L78 82 M110 70 L145 82" stroke="#b88fa2" stroke-linecap="round" stroke-width="7"></path></svg></div>
+<h3>Stretch &amp; recovery</h3><small>TAP TO UNLOCK PHOTOS</small>
+</div>
+</div>
+<div class="photo-reveal" id="gymGallery">
+<h3 id="gymGalleryTitle">Your workout moments</h3>
+<div class="photo-strip" id="gymPhotos"></div>
+<button class="close-gallery" onclick="closeGallery('gymGallery')">CLOSE PHOTO STORY ×</button>
+</div>
+<div class="gym-board">
+<div class="gym-card"><div class="gym-icon">🏋🏻‍♀️</div><h3>Rep counter</h3><div class="counter" id="reps">0</div><button onclick="addRep()">ADD A REP +</button></div>
+<div class="gym-card"><div class="gym-icon">💧</div><h3>Hydration check</h3><div class="counter" id="water">0 / 8</div><button onclick="addWater()">DRINK WATER</button></div>
+<div class="gym-card"><div class="gym-icon">🏆</div><h3>Daily motivation</h3><p id="motivation">Your strength is your superpower.</p><button onclick="newQuote()">NEW MOTIVATION</button></div>
+</div>
+<div class="message show">My favourite thing isn't your strength at the gym — it's the strength you carry in your heart. ♥</div>
+</div>
+</section><section class="section-travel" id="travel">
+<div class="wrap">
+<div class="center eyebrow">Chapter 04 · The explorer</div>
+<h2>Let's get lost somewhere beautiful.</h2>
+<p class="lead">Watch our little plane take off. When it reaches the sky, tap it to reveal a surprise. Then choose a destination to open its photo story.</p>
+<div class="plane-stage" id="planeStage">
+<div class="plane-sun"></div><div class="plane-cloud cloud-a"></div><div class="plane-cloud cloud-b"></div>
+<div class="runway"></div>
+<div class="plane-flight" id="plane" title="Our little flight ✈">
+<svg aria-label="Passenger airplane with travel photos in its windows" viewbox="0 0 300 150">
+<defs>
+<lineargradient id="fuselage" x2="0" y2="1"><stop stop-color="#fff"></stop><stop offset=".55" stop-color="#e7eef1"></stop><stop offset="1" stop-color="#b9cbd2"></stop></lineargradient>
+<lineargradient id="wing" x2="0" y2="1"><stop stop-color="#d9e6eb"></stop><stop offset="1" stop-color="#9fb5c0"></stop></lineargradient>
+<clippath id="w1"><rect height="9" rx="4" width="13" x="78" y="66"></rect></clippath><clippath id="w2"><rect height="9" rx="4" width="13" x="99" y="66"></rect></clippath><clippath id="w3"><rect height="9" rx="4" width="13" x="120" y="66"></rect></clippath><clippath id="w4"><rect height="9" rx="4" width="13" x="141" y="66"></rect></clippath><clippath id="w5"><rect height="9" rx="4" width="13" x="162" y="66"></rect></clippath><clippath id="w6"><rect height="9" rx="4" width="13" x="183" y="66"></rect></clippath>
+</defs>
+<path d="M20 75 Q28 58 62 58 L238 58 Q270 60 284 75 Q270 90 238 92 L62 92 Q28 92 20 75Z" fill="url(#fuselage)" stroke="#849eaa" stroke-width="2"></path>
+<path d="M118 62 L165 8 Q171 1 179 6 L164 64Z M118 88 L165 142 Q171 149 179 144 L164 86Z" fill="url(#wing)" stroke="#8fa7b2" stroke-width="2"></path>
+<path d="M38 63 L14 35 Q10 29 18 27 L74 61Z M38 87 L14 115 Q10 121 18 123 L74 89Z" fill="#c7d8de" stroke="#8fa7b2" stroke-width="2"></path>
+<path d="M25 75 Q12 75 3 75 Q12 64 25 65Z" fill="#d5a5b6"></path><path d="M55 65 H238" stroke="#d6a6b8" stroke-width="4"></path>
+<g class="plane-window-photos" opacity="0">
+<image clip-path="url(#w1)" height="11" href="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=200&amp;h=120&amp;fit=crop" width="15" x="77" y="65"/>
+<image clip-path="url(#w2)" height="11" href="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=200&amp;h=120&amp;fit=crop" width="15" x="98" y="65"/>
+<image clip-path="url(#w3)" height="11" href="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=200&amp;h=120&amp;fit=crop" width="15" x="119" y="65"/>
+<image clip-path="url(#w4)" height="11" href="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=200&amp;h=120&amp;fit=crop" width="15" x="140" y="65"/>
+<image clip-path="url(#w5)" height="11" href="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=200&amp;h=120&amp;fit=crop" width="15" x="161" y="65"/>
+<image clip-path="url(#w6)" height="11" href="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=200&amp;h=120&amp;fit=crop" width="15" x="182" y="65"/>
+</g>
+<g fill="#8ba6b2"><path d="M76 67 h13 l-2 7 h-13z"></path><path d="M97 67 h13 l-2 7 h-13z"></path><path d="M118 67 h13 l-2 7 h-13z"></path><path d="M139 67 h13 l-2 7 h-13z"></path><path d="M160 67 h13 l-2 7 h-13z"></path><path d="M181 67 h13 l-2 7 h-13z"></path></g>
+<path d="M210 92 L226 109 L232 109 L229 91" fill="#9fb5c0" stroke="#849eaa" stroke-width="2"></path><circle cx="234" cy="76" fill="#d7b58b" r="5"></circle>
+</svg>
+</div>
+<div class="plane-hint" id="planeHint">BOARDING · WATCH THE TAKEOFF ✈</div>
+</div>
+<div class="plane-surprise" id="planeSurprise">You clicked the little plane… ✨<br/>Imagine us flying away together, collecting sunsets and memories in every corner of the world. ♥</div>
+<div class="photo-reveal" id="planeGallery">
+<h3>Our sky-high daydreams ✈</h3>
+<div class="photo-strip" id="planePhotos"></div>
+<button class="close-gallery" onclick="closeGallery('planeGallery')">CLOSE PHOTO STORY ×</button>
+</div>
+<div class="destination-grid">
+<div class="destination" id="beachCard" onclick="openDestination('beach')">
+<svg viewbox="0 0 400 190"><rect fill="#d9edf0" height="190" width="400"></rect><circle cx="310" cy="48" fill="#f3d4a9" r="27"></circle><path d="M0 100 Q110 60 210 100 T400 95 V190 H0Z" fill="#a9d3d4"></path><path d="M0 125 Q100 100 200 130 T400 120 V190 H0Z" fill="#f1ddbd"></path><path d="M40 190 Q70 130 110 145 Q140 150 160 190" fill="#e6cba9"></path></svg>
+<div><b>Beach escapes</b><p>Sunsets &amp; sea breeze</p><span class="open-label">TAP TO OPEN PHOTO ALBUM ↓</span></div>
+</div>
+<div class="destination" id="mountainCard" onclick="openDestination('mountain')">
+<svg viewbox="0 0 400 190"><rect fill="#e8e9f0" height="190" width="400"></rect><circle cx="320" cy="40" fill="#f4dfbd" r="25"></circle><path d="M0 170 L110 40 L220 170Z" fill="#b8b7ca"></path><path d="M110 40 L145 90 L120 80 L105 96 L90 78Z" fill="#fff"></path><path d="M140 170 L270 20 L400 170Z" fill="#a8c2bb"></path><path d="M270 20 L300 68 L275 60 L260 78 L248 62Z" fill="#fff"></path><path d="M0 170 Q120 145 220 175 T400 170 V190 H0Z" fill="#c9dfcf"></path></svg>
+<div><b>Mountain adventures</b><p>Clouds &amp; quiet roads</p><span class="open-label">TAP TO OPEN PHOTO ALBUM ↓</span></div>
+</div>
+</div>
+<div class="sea-album" id="seaAlbum">
+<h3 style="text-align:center;font-weight:400;margin:4px 0 14px">A little ocean daydream 🌊</h3>
+<div class="sea-scene">
+<div class="sea-sun"></div>
+<div class="sea-wave one"></div><div class="sea-wave two"></div><div class="sea-wave three"></div>
+</div>
+<div class="sea-caption">Every wave brings another little memory…</div>
+<div class="wave-photo-row" id="seaPhotos"></div>
+<button class="close-gallery" onclick="closeGallery('seaAlbum')">CLOSE BEACH STORY ×</button>
+</div>
+<div class="photo-reveal" id="destinationGallery">
+<h3 id="destinationTitle">A little escape</h3>
+<div class="photo-strip" id="destinationPhotos"></div>
+<button class="close-gallery" onclick="closeGallery('destinationGallery')">CLOSE PHOTO STORY ×</button>
+</div>
+</div>
+</section><section class="light" id="gift"><div class="wrap"><div class="eyebrow">A little something, wrapped with love</div><h2 class="headline">I got you a surprise</h2><div aria-label="Open the gift box" class="gift-scene" id="giftScene" role="button" tabindex="0"><div class="gift-box"></div><div class="gift-lid"></div><div class="gift-bow">🎀</div><div class="gift-sparkles" id="giftSparkles">✦　✧　✦</div></div><div class="gift-hint" id="giftHint">Tap the gift box to open it</div><p class="copy">It's not about what's inside. It's about the person I get to give it to.</p><label class="upload-label">Add your surprise video <input accept="video/*" id="surpriseVideoUpload" type="file"/></label><button class="btn" disabled="" id="giftContinue" onclick="go('envelope')">Open the next page</button></div></section>
+<div class="video-overlay" id="videoOverlay" aria-hidden="true">
+  <div class="video-overlay-card" role="dialog" aria-modal="true" aria-label="Birthday video surprise">
+    <div id="flowerRain" class="flower-rain" aria-hidden="true"></div>
+    <button type="button" class="video-close" id="videoClose" aria-label="Close video">×</button>
+    <p class="video-message" id="videoMessage">A little surprise, made with love ♥</p>
+    <video id="surpriseVideo" playsinline webkit-playsinline preload="metadata"></video>
+  </div>
+</div>
+<section id="envelope"><div class="wrap"><div class="eyebrow">Something I wrote just for you</div><h2 class="headline" style="color:#96385f">A letter, sealed<br><span class="script">just for you</span></br></h2><p class="copy">A few words from my heart. Tap the envelope to open it.</p><div aria-label="Open sealed love letter" class="envelope" id="envelopeArt" role="button" tabindex="0"><div class="envelope-back"></div><div class="envelope-paper"><strong>Hey love ♥</strong><p>I don't think I tell you this enough, but meeting you has been one of the best things that's ever happened to me.</p></div><div class="envelope-flap"></div><div class="wax">♥</div></div><button class="btn" id="readLetterButton">Read your letter</button></div></section><section class="letter-page" id="letter"><div class="wrap"><div class="eyebrow">Written with all my love</div><h2 class="headline" style="color:#96385f">A letter for you</h2><div class="letter-paper"><h3 id="letterHeading">Hey love ♥</h3><p id="letterText">I don't think I tell you this enough, but meeting you has been one of the best things that's ever happened to me.\n\nThank you for being patient with me, making me laugh, listening to my endless talks, and loving me even on the days I'm difficult.\n\nNo matter how busy life gets, I hope you always remember one thing... you'll always be my favorite person.\n\nI love you more than words can ever explain. ❤️</p><div class="letter-sign" id="signature">Yours, always</div></div><div class="audio-panel"><div class="playicon">♫</div><div class="serif" style="color:#99436a;font-size:20px">Hear me say it</div><p style="font-size:12px;color:#9a7888">A voice message, just for you</p><input accept="audio/*" aria-label="Choose voice note" id="audioUpload" type="file"/><audio controls="" hidden="" id="voicePlayer"></audio></div><button class="btn" onclick="go('promises')" style="margin-top:25px">One last thing…</button></div></section><section id="promises"><div class="wrap"><div class="eyebrow">A little promise between us</div><h2 class="headline" style="color:#96385f">Tick the ones<br/>you'll hold on to</h2><p class="copy">A few little promises for the days ahead. Choose the ones that mean something to you.</p><div class="promise-card" id="promiseList">
+<label><input type="checkbox"/><span>We will always make time to listen to each other.</span></label>
+<label><input type="checkbox"/><span>We will keep laughing, even at the silly things.</span></label>
+<label><input type="checkbox"/><span>We will be honest, patient and kind with each other.</span></label>
+<label><input type="checkbox"/><span>We will celebrate the little wins together.</span></label>
+<label><input type="checkbox"/><span>We will keep choosing each other, every day.</span></label></div><button class="btn" onclick="savePromises()">I promise ♥</button><div aria-live="polite" class="promise-result" id="promiseResult"></div><button class="btn ghost" onclick="go('final')" style="margin-top:12px">See the final surprise</button></div></section><section class="last-scene" id="final">
+<div class="final-content">
+<div class="final-kicker">If I could choose a thousand times...</div>
+<div class="final-stage">
+<div class="final-orbit"></div>
+<span class="final-star" style="top:15%;left:14%;font-size:19px">✦</span>
+<span class="final-star" style="top:22%;right:13%;font-size:13px">✧</span>
+<span class="final-star" style="bottom:18%;left:19%;font-size:15px">✧</span>
+<span class="final-star" style="bottom:13%;right:18%;font-size:20px">✦</span>
+<button aria-label="Tap the glowing heart" class="last-heart" id="finalHeart">♥</button>
+</div>
+<div class="last-word">In every lifetime,<br/>I'd find you.</div>
+<p class="last-copy">Not just for the perfect days. For the silly days, the quiet days, the difficult days — and every ordinary moment in between. You are my once-in-a-lifetime kind of love.</p>
+<button class="last-button" id="finalButton">MAKE ONE LAST WISH ✨</button>
+<div aria-live="polite" class="last-reveal" id="finalReveal">If the whole world started over, I would still look for you.<br/><br/>And when I found you, I would choose you all over again.<br/><br/><b>Always yours. ♥</b></div>
+</div>
+</section></main>
 
-
-/* Final targeted text-contrast repair for pages 1, 3, 4, 5 and 6. */
-#added-pages > section#opening .arrow-instruction,
-#added-pages > section#opening .eyebrow,
-#added-pages > section#opening .headline,
-#added-pages > section#opening .copy,
-#added-pages > section#opening .skip,
-#added-pages > section#opening #birthdayMessage {
-  color: #ffe0ec !important;
-  -webkit-text-fill-color: #ffe0ec !important;
-  text-shadow: 0 1px 8px rgba(0,0,0,.45);
-}
-#added-pages > section#civil,
-#added-pages > section#mall,
-#added-pages > section#gym,
-#added-pages > section#travel {
-  color: #674653 !important;
-}
-#added-pages > section#civil h1,
-#added-pages > section#civil h2,
-#added-pages > section#civil h3,
-#added-pages > section#civil p,
-#added-pages > section#civil .lead,
-#added-pages > section#civil .tap-note,
-#added-pages > section#civil .tree-message,
-#added-pages > section#mall h1,
-#added-pages > section#mall h2,
-#added-pages > section#mall h3,
-#added-pages > section#mall p,
-#added-pages > section#mall .lead,
-#added-pages > section#mall .item,
-#added-pages > section#gym h1,
-#added-pages > section#gym h2,
-#added-pages > section#gym h3,
-#added-pages > section#gym p,
-#added-pages > section#gym .lead,
-#added-pages > section#gym .equipment,
-#added-pages > section#gym .gym-card,
-#added-pages > section#gym .message,
-#added-pages > section#travel h1,
-#added-pages > section#travel h2,
-#added-pages > section#travel h3,
-#added-pages > section#travel p,
-#added-pages > section#travel .lead,
-#added-pages > section#travel .plane-hint,
-#added-pages > section#travel .plane-surprise,
-#added-pages > section#travel .destination,
-#added-pages > section#travel .sea-caption {
-  color: #674653 !important;
-  -webkit-text-fill-color: #674653 !important;
-}
-#added-pages > section#civil .eyebrow,
-#added-pages > section#mall .eyebrow,
-#added-pages > section#gym .eyebrow,
-#added-pages > section#travel .eyebrow,
-#added-pages > section#civil .tap-note,
-#added-pages > section#mall .tap-note,
-#added-pages > section#gym .tap-note,
-#added-pages > section#travel .tap-note {
-  color: #80566a !important;
-  -webkit-text-fill-color: #80566a !important;
-}
-#added-pages > section#mall button,
-#added-pages > section#gym button,
-#added-pages > section#travel button {
-  color: #663e51 !important;
-}
-
-
-
-/* Page 2 only: stronger contrast on the pale welcome page. */
-#added-pages > section.hero .wrap,
-#added-pages > section.hero .wrap * {
-  color: #674653 !important;
-  -webkit-text-fill-color: #674653 !important;
-  text-shadow: none !important;
-}
-#added-pages > section.hero .hero-heart {
-  color: #df7898 !important;
-  -webkit-text-fill-color: #df7898 !important;
-  filter: drop-shadow(0 10px 20px #bd789455);
-}
-#added-pages > section.hero .pill {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-  background: linear-gradient(135deg, #c85f86, #9e527b) !important;
-  border-color: #a94f78 !important;
-}
-#added-pages > section.hero .scroll-hint {
-  color: #765866 !important;
-  -webkit-text-fill-color: #765866 !important;
-}
-
-
-
-/* Mall doors now swing open only after the button is clicked. */
-#mallScene { perspective: 1000px; }
-#mallScene .mall-door {
-  transform-box: fill-box;
-  transition: transform 1.35s cubic-bezier(.2,.8,.2,1);
-  backface-visibility: hidden;
-}
-#mallScene .door-left {
-  transform-origin: left center;
-}
-#mallScene .door-right {
-  transform-origin: right center;
-}
-#mallScene.mall-open .door-left {
-  transform: rotateY(-78deg);
-}
-#mallScene.mall-open .door-right {
-  transform: rotateY(78deg);
-}
-
+<style id="global-page-number-style">
+body > section, #added-pages > section{position:relative}
+.page-number{position:absolute;top:18px;right:20px;z-index:100;min-width:76px;padding:8px 12px;border:1px solid rgba(255,255,255,.65);border-radius:999px;background:rgba(255,255,255,.72);color:#805d70;font:600 10px/1.2 Arial,sans-serif;letter-spacing:2px;text-align:center;box-shadow:0 4px 18px rgba(80,45,65,.12);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);pointer-events:none}
+#added-pages .page-number{background:rgba(25,10,22,.72);border-color:rgba(255,190,215,.45);color:#ffd6e7}
+@media(max-width:600px){.page-number{top:12px;right:12px;padding:7px 10px;font-size:9px;min-width:68px}}
 </style>
+
+
+<!-- Scripts moved to the end so all page elements exist before event handlers attach. -->
+<script>
+function showMsg(id,text){const el=document.getElementById(id);el.textContent=text;el.classList.add('show');}
+const mall=document.getElementById('mallScene');
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){mall.classList.add('mall-open');}})},{threshold:.35});
+observer.observe(mall);
+const planeObserver=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting&&!planeSequenceStarted){planeSequenceStarted=true;plane.style.animation='planeTakeoff 7.5s cubic-bezier(.22,.72,.2,1) forwards';planeObserver.disconnect();}})},{threshold:.25});
+planeObserver.observe(document.getElementById('planeStage'));
+document.getElementById('openMall').addEventListener('click',()=>mall.classList.add('mall-open'));
+let reps=0,water=0;
+function addRep(){reps++;document.getElementById('reps').textContent=reps;}
+function addWater(){water=Math.min(8,water+1);document.getElementById('water').textContent=water+' / 8';}
+const quotes=['Your strength is your superpower.','Consistency makes the magic happen.','Strong mind. Strong body. Strong heart.','One more rep, one more reason to be proud.'];
+let qi=0;function newQuote(){qi=(qi+1)%quotes.length;document.getElementById('motivation').textContent=quotes[qi];}
+const gymSets={
+ weights:{title:'Power in every rep',photos:[['Strength session','https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800'],['Dumbbell day','https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800'],['Training focus','https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800']]},
+ treadmill:{title:'One step at a time',photos:[['Cardio energy','https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=800'],['Run your own race','https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800'],['Keep moving','https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800']]},
+ yoga:{title:'Stretch, breathe, reset',photos:[['Find your balance','https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800'],['A moment to reset','https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800'],['Mind and body','https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800']]}
+};
+function renderPhotos(target,items){target.innerHTML='';items.forEach((item,i)=>{const tile=document.createElement('div');tile.className='photo-tile';tile.style.setProperty('--delay',(i*.65)+'s');tile.innerHTML='<img loading="lazy" src="'+item[1]+'" alt="'+item[0]+'" onerror="this.style.display=\'none\';this.parentElement.classList.add(\'image-fallback\')"><p>'+item[0]+'</p>';target.appendChild(tile);});}
+function openGymGallery(type){const set=gymSets[type];document.getElementById('gymGalleryTitle').textContent=set.title;renderPhotos(document.getElementById('gymPhotos'),set.photos);document.getElementById('gymGallery').classList.add('show');document.getElementById('gymGallery').scrollIntoView({behavior:'smooth',block:'nearest'});}
+function closeGallery(id){document.getElementById(id).classList.remove('show');}
+const beachPhotos=[['Golden hour by the sea','https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900'],['Turquoise water','https://images.unsplash.com/photo-1519046904884-53103b34b206?w=900'],['A quiet beach day','https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=900']];
+const mountainPhotos=[['Above the clouds','https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900'],['Mountain road trip','https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900'],['The peaceful peaks','https://images.unsplash.com/photo-1464278533981-50106e6176b1?w=900']];
+function openDestination(kind){const isBeach=kind==='beach';document.getElementById('beachCard').classList.toggle('open',isBeach);document.getElementById('mountainCard').classList.toggle('open',!isBeach);if(isBeach){closeGallery('destinationGallery');renderSeaPhotos();document.getElementById('seaAlbum').classList.add('show');document.getElementById('seaAlbum').scrollIntoView({behavior:'smooth',block:'nearest'});}else{closeGallery('seaAlbum');document.getElementById('destinationTitle').textContent='Mountain air & cosy adventures';renderPhotos(document.getElementById('destinationPhotos'),mountainPhotos);document.getElementById('destinationGallery').classList.add('show');document.getElementById('destinationGallery').scrollIntoView({behavior:'smooth',block:'nearest'});}}
+const seaPhotoData=[['First wave · salty breeze','https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900'],['Second wave · turquoise dreams','https://images.unsplash.com/photo-1519046904884-53103b34b206?w=900'],['Third wave · golden hour','https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=900']];
+function renderSeaPhotos(){const root=document.getElementById('seaPhotos');root.innerHTML='';seaPhotoData.forEach((item,i)=>{const tile=document.createElement('div');tile.className='wave-photo';tile.style.setProperty('--delay',(i*1.1)+'s');tile.innerHTML='<img loading="lazy" src="'+item[1]+'" alt="'+item[0]+'" onerror="this.style.display=\'none\'"><p>'+item[0]+'</p>';root.appendChild(tile);});}
+let planeReady=false; let planeSequenceStarted=false;
+const plane=document.getElementById('plane');
+plane.addEventListener('animationend',(event)=>{if(event.animationName==='planeTakeoff'||event.animationName==='planeTakeoffMobile'){planeReady=true;document.getElementById('planeHint').textContent='A LITTLE SURPRISE IS COMING CLOSER… ✨';setTimeout(()=>plane.classList.add('zoom-final'),650);}else if(event.animationName==='planeZoomClose'||event.animationName==='planeZoomCloseMobile'){document.getElementById('planeHint').textContent='LOOK THROUGH THE WINDOWS ♥';document.getElementById('planeSurprise').classList.add('show');renderPhotos(document.getElementById('planePhotos'),[['Cloud nine','https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900'],['Window seat views','https://images.unsplash.com/photo-1500534623283-312aade485b7?w=900'],['Somewhere beautiful','https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=900']]);document.getElementById('planeGallery').classList.add('show');}});
+let planeClicked=false;</script>
+<script id="fx-script">
+(function(){
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const rnd=(a,b)=>a+Math.random()*(b-a);
+const cols=['#e48fa9','#f3b3c6','#c9b3e6','#f2cf8e','#9fd1c4'];
+const $=id=>document.getElementById(id);
+
+/* Heart / sparkle burst */
+function burst(x,y,n,spread,chs){
+ if(reduce)return;n=n||8;spread=spread||70;chs=chs||['♥','✦','♡'];
+ for(let i=0;i<n;i++){
+  const p=document.createElement('span');p.className='fx-p';p.textContent=chs[i%chs.length];
+  const a=Math.random()*Math.PI*2,d=rnd(spread*.4,spread);
+  p.style.cssText='--x:'+x+'px;--y:'+y+'px;--dx:'+(Math.cos(a)*d)+'px;--dy:'+(Math.sin(a)*d-rnd(10,40))+'px;--r:'+rnd(-90,90)+'deg;--s:'+rnd(11,22)+'px;--c:'+cols[i%cols.length]+';--t:'+rnd(.8,1.4)+'s';
+  document.body.appendChild(p);setTimeout(()=>p.remove(),1500);
+ }
+}
+function celebrate(id){const r=$(id).getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,26,170,['♥','✦','❀','♡']);}
+
+/* Click hearts + mouse sparkle trail */
+document.addEventListener('click',e=>{const hot=e.target.closest('button,.hotspot,.item,.equipment,.destination,#plane');burst(e.clientX,e.clientY,hot?10:5,hot?90:55);});
+let lt=0;
+addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'||reduce)return;const t=performance.now();if(t-lt<70)return;lt=t;burst(e.clientX,e.clientY,1,18,['✦','♥']);});
+
+/* Scroll progress bar */
+const bar=document.createElement('div');bar.id='fxProgress';document.body.prepend(bar);
+let tick=false;
+function prog(){const h=document.documentElement.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?Math.min(1,scrollY/h):0)+')';tick=false;}
+addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(prog);}},{passive:true});prog();
+
+/* Floating hearts background */
+if(!reduce){
+ const L=document.createElement('div');L.className='fx-layer';
+ const chars=['♥','♡','✦','✧','❀'],N=innerWidth<650?9:16;
+ for(let i=0;i<N;i++){const s=document.createElement('span');s.className='fx-float';s.textContent=chars[i%chars.length];
+  s.style.cssText='--l:'+rnd(0,98)+'%;--s:'+rnd(10,24)+'px;--c:'+cols[i%cols.length]+';--d:'+rnd(16,30)+'s;--dl:-'+rnd(0,26)+'s;--sw:'+rnd(-80,80)+'px;--r:'+rnd(-120,120)+'deg';L.appendChild(s);}
+ document.body.appendChild(L);
+}
+
+/* Scroll reveal (elements are only hidden once JS has tagged them) */
+if('IntersectionObserver' in window){
+ const sel=['.wrap>.eyebrow','.wrap>h1','.wrap>h2','.wrap>.lead','.scene','.shop-grid .item','.gym-equipment .equipment','.gym-board .gym-card','.destination','.plane-stage','.wrap>.pill'].map(s=>'section:not(.hero) '+s).join(',');
+ const io=new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target);}});},{threshold:.12});
+ document.querySelectorAll(sel).forEach(el=>{
+  el.classList.add('reveal');
+  el.style.setProperty('--rd',Math.min(.6,[...el.parentElement.children].indexOf(el)*.12)+'s');
+  io.observe(el);
+ });
+}
+
+/* SVG extras: drifting clouds + JCB arm */
+const NS='http://www.w3.org/2000/svg';
+const cs=document.querySelector('#construction svg');
+if(cs){
+ const sun=cs.querySelector(':scope>circle');
+ [[130,60,1.1],[560,105,.8]].forEach((c,i)=>{
+  const o=document.createElementNS(NS,'g');o.setAttribute('transform','translate('+c[0]+' '+c[1]+') scale('+c[2]+')');o.setAttribute('pointer-events','none');
+  o.innerHTML='<g class="fx-svg-cloud" style="animation-duration:'+(18+i*7)+'s;animation-delay:-'+(i*5)+'s"><g fill="#fff" opacity=".8"><ellipse rx="34" ry="11"/><ellipse cx="-14" cy="-8" rx="16" ry="12"/><ellipse cx="10" cy="-11" rx="19" ry="14"/></g></g>';
+  cs.insertBefore(o,sun);
+ });
+ const jcb=cs.querySelectorAll('.hotspot')[2];
+ if(jcb){const ps=jcb.querySelectorAll('path');if(ps.length>=2){const g=document.createElementNS(NS,'g');g.setAttribute('class','jcb-arm');jcb.insertBefore(g,ps[0]);g.appendChild(ps[0]);g.appendChild(ps[1]);}}
+}
+
+/* Mall door-open sparkles */
+const mall=$('mallScene');
+if(mall)new MutationObserver((m,o)=>{if(mall.classList.contains('mall-open')){o.disconnect();setTimeout(()=>{const r=mall.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height*.55,22,170,['✦','♥','✧']);},700);}}).observe(mall,{attributes:true,attributeFilter:['class']});
+
+/* Gym: safe wrappers around existing functions */
+function bump(id){const e=$(id);e.classList.remove('bump');void e.offsetWidth;e.classList.add('bump');}
+const _ar=window.addRep,_aw=window.addWater,_nq=window.newQuote,_sm=window.showMsg;
+window.addRep=function(){_ar();bump('reps');if(reps%10===0)celebrate('reps');};
+window.addWater=function(){_aw();bump('water');if(water===8)celebrate('water');};
+window.newQuote=function(){_nq();const m=$('motivation');m.classList.remove('swap');void m.offsetWidth;m.classList.add('swap');};
+window.showMsg=function(id,t){const el=$(id);el.classList.remove('show');void el.offsetWidth;_sm(id,t);const r=el.getBoundingClientRect();if(r.bottom>innerHeight-10||r.top<0)el.scrollIntoView({behavior:'smooth',block:'nearest'});};
+
+/* Travel: extra clouds, plane starts when visible, plane is tappable */
+const ps=$('planeStage'),pl=$('plane');
+if(ps&&pl){
+ [['52%','14%',.6,'24s'],['2%','60%',.55,'30s'],['34%','8%',.5,'27s']].forEach(c=>{
+  const d=document.createElement('div');d.className='plane-cloud';d.style.cssText='left:'+c[0]+';top:'+c[1]+';transform:scale('+c[2]+');animation-duration:'+c[3]+';opacity:.8';
+  ps.insertBefore(d,ps.querySelector('.runway'));
+ });
+ if('IntersectionObserver' in window)new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting){pl.classList.add('go');o.disconnect();}});},{threshold:.25}).observe(ps);
+ else pl.classList.add('go');
+ pl.addEventListener('click',()=>{$('planeSurprise').classList.add('show');const r=pl.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,16,120,['♥','✦','☁']);});
+}
+
+/* Sea album: sailboat + seagulls */
+const sea=document.querySelector('.sea-scene');
+if(sea)sea.insertAdjacentHTML('beforeend','<div class="fx-boat"><svg viewBox="0 0 80 70"><path d="M40 4V48" stroke="#9a8190" stroke-width="2.5"/><path d="M43 7L68 42H43Z" fill="#fff"/><path d="M37 15L16 42H37Z" fill="#ffeef2"/><path d="M10 47H70L61 62H20Z" fill="#e8bdc8" stroke="#b98c9d" stroke-width="2"/></svg></div>'+
+ ['12%;--gd:16s;--gdl:0s','24%;--gd:21s;--gdl:-8s'].map(v=>'<div class="fx-gull" style="--gt:'+v+'"><svg viewBox="0 0 32 14"><path d="M1 12Q8 0 16 9Q24 0 31 12" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg></div>').join(''));
+
+/* Finale hearts */
+const fh=document.querySelector('.final-heart');
+if(fh&&'IntersectionObserver' in window)new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting){o.disconnect();const r=fh.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,20,200,['♥','❀','✦','♡']);}});},{threshold:.6}).observe(fh);
+const endBtn=document.querySelector('.section-end .pill');
+if(endBtn)endBtn.addEventListener('click',e=>burst(e.clientX,e.clientY,28,200,['♥','✦','❀','♡']));
+})();
+</script>
 <script>
 (()=>{
  const root=document.getElementById('added-pages');
@@ -1018,21 +933,32 @@ if(endBtn)endBtn.addEventListener('click',e=>burst(e.clientX,e.clientY,28,200,['
  arrow.addEventListener('pointerup',()=>{if(dragging)shootArrowToHeart();});arrow.addEventListener('pointercancel',()=>{if(dragging)shootArrowToHeart();});arrow.addEventListener('click',()=>{if(!dragging&&!arrowFinished)shootArrowToHeart();});
  // Page numbers are added once globally below, across the original and appended sections.
  const gift=$('#giftScene'),giftContinue=$('#giftContinue'),giftVideoInput=$('#surpriseVideoUpload'),videoOverlay=$('#videoOverlay'),surpriseVideo=$('#surpriseVideo'),videoClose=$('#videoClose');let personalVideoURL=null,giftStarted=false;
- giftVideoInput.addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];if(f){if(personalVideoURL)URL.revokeObjectURL(personalVideoURL);personalVideoURL=URL.createObjectURL(f);$('#giftHint').textContent='Your personal video is ready ♥';}});
- function flowerShower(){const layer=$('#flowerRain');layer.innerHTML='';for(let i=0;i<110;i++){const f=document.createElement('span');f.textContent=['🌸','🌹','🌷','💗','✿','🌺'][i%6];f.style.left=Math.random()*100+'%';f.style.setProperty('--duration',(2.5+Math.random()*3)+'s');f.style.setProperty('--size',(20+Math.random()*24)+'px');f.style.setProperty('--drift',((Math.random()-.5)*180)+'px');f.style.animationDelay=(Math.random()*.8)+'s';layer.appendChild(f);}}
- function closeSurpriseVideo(){surpriseVideo.pause();videoOverlay.classList.remove('active');videoOverlay.setAttribute('aria-hidden','true');giftContinue.disabled=false;$('#giftHint').textContent='Your surprise is complete. Now continue ♥';}
- function playSurpriseVideo(){flowerShower();videoOverlay.classList.add('active');videoOverlay.setAttribute('aria-hidden','false');if(personalVideoURL){surpriseVideo.src=personalVideoURL;surpriseVideo.controls=false;surpriseVideo.muted=false;surpriseVideo.currentTime=0;const pp=surpriseVideo.play();if(pp&&pp.catch)pp.catch(()=>{$('#videoMessage').textContent='Tap the video to play your surprise ♥';surpriseVideo.controls=true;});}else{$('#videoMessage').textContent='Add your personal video above the gift before opening it ♥';surpriseVideo.removeAttribute('src');}}
+ if(giftVideoInput)giftVideoInput.addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];if(f){if(personalVideoURL)URL.revokeObjectURL(personalVideoURL);personalVideoURL=URL.createObjectURL(f);$('#giftHint').textContent='Your personal video is ready ♥';}});
+ function flowerShower(){const layer=$('#flowerRain');if(!layer)return;layer.innerHTML='';for(let i=0;i<110;i++){const f=document.createElement('span');f.textContent=['🌸','🌹','🌷','💗','✿','🌺'][i%6];f.style.left=Math.random()*100+'%';f.style.setProperty('--duration',(2.5+Math.random()*3)+'s');f.style.setProperty('--size',(20+Math.random()*24)+'px');f.style.setProperty('--drift',((Math.random()-.5)*180)+'px');f.style.animationDelay=(Math.random()*.8)+'s';layer.appendChild(f);}}
+ function closeSurpriseVideo(){if(surpriseVideo)surpriseVideo.pause();if(videoOverlay){videoOverlay.classList.remove('active');videoOverlay.setAttribute('aria-hidden','true');}if(giftContinue)giftContinue.disabled=false;$('#giftHint').textContent='Your surprise is complete. Now continue ♥';}
+ function playSurpriseVideo(){flowerShower();if(videoOverlay){videoOverlay.classList.add('active');videoOverlay.setAttribute('aria-hidden','false');}if(personalVideoURL&&surpriseVideo){surpriseVideo.src=personalVideoURL;surpriseVideo.controls=true;surpriseVideo.muted=false;surpriseVideo.currentTime=0;const pp=surpriseVideo.play();if(pp&&pp.catch)pp.catch(()=>{$('#videoMessage').textContent='Tap play to watch your surprise ♥';surpriseVideo.controls=true;});}else{if($('#videoMessage'))$('#videoMessage').textContent='Your video has not been added yet. Close this window to continue ♥';if(surpriseVideo)surpriseVideo.removeAttribute('src');}}
  function openGift(){if(giftStarted)return;giftStarted=true;gift.classList.add('opened');giftContinue.disabled=true;$('#giftHint').textContent='A shower of flowers, just for you…';setTimeout(playSurpriseVideo,850);}
- gift.addEventListener('click',openGift);gift.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openGift();}});surpriseVideo.addEventListener('ended',closeSurpriseVideo);videoClose.addEventListener('click',closeSurpriseVideo);surpriseVideo.addEventListener('click',()=>{if(surpriseVideo.paused&&personalVideoURL)surpriseVideo.play();});
+ if(gift){gift.addEventListener('click',openGift);gift.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openGift();}});}if(surpriseVideo){surpriseVideo.addEventListener('ended',closeSurpriseVideo);surpriseVideo.addEventListener('click',()=>{if(surpriseVideo.paused&&personalVideoURL){const pp=surpriseVideo.play();if(pp&&pp.catch)pp.catch(()=>{});}});}if(videoClose)videoClose.addEventListener('click',closeSurpriseVideo);
  const env=$('#envelopeArt');function openEnv(){env.classList.toggle('open');}env.addEventListener('click',openEnv);env.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openEnv();}});
- $('#audioUpload').addEventListener('change',e=>{const f=e.target.files[0];if(f){const a=$('#voicePlayer');a.src=URL.createObjectURL(f);a.hidden=false;}});
+ const audioUpload=$('#audioUpload');if(audioUpload)audioUpload.addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];if(f){const a=$('#voicePlayer');a.src=URL.createObjectURL(f);a.hidden=false;}});
  window.savePromises=function(){const n=$('#promiseList input:checked').length;$('#promiseResult').textContent=n?`You chose ${n} promise${n===1?'':'s'}. Let's keep them close. ♥`:'Choose at least one promise to make this moment yours.';};
  $('#readLetterButton').addEventListener('click',()=>{if(!env.classList.contains('open'))openEnv();$('#readLetterButton').textContent='Opening your letter…';setTimeout(()=>go('letter'),1050);});
  function makeFinalPetals(count=100){const scene=$('#final');for(let i=0;i<count;i++){const p=document.createElement('span');p.className='last-petal';p.textContent=['♥','✦','💗','🌸','✨'][i%5];p.style.left=Math.random()*100+'%';p.style.animationDuration=(2+Math.random()*4)+'s';p.style.fontSize=(15+Math.random()*20)+'px';scene.appendChild(p);setTimeout(()=>p.remove(),6500);}}
- $('#finalButton').addEventListener('click',function(){$('#finalReveal').classList.add('show');makeFinalPetals(130);this.textContent='I CHOOSE YOU, ALWAYS ♥';});$('#finalHeart').addEventListener('click',()=>{const h=$('#finalHeart');h.animate([{transform:'scale(1)'},{transform:'scale(1.2)'},{transform:'scale(1)'}],{duration:550});$('#finalReveal').classList.add('show');});
+ const finalButton=$('#finalButton'),finalHeart=$('#finalHeart');if(finalButton)finalButton.addEventListener('click',function(){$('#finalReveal').classList.add('show');makeFinalPetals(130);this.textContent='I CHOOSE YOU, ALWAYS ♥';});if(finalHeart)finalHeart.addEventListener('click',()=>{finalHeart.animate([{transform:'scale(1)'},{transform:'scale(1.2)'},{transform:'scale(1)'}],{duration:550});$('#finalReveal').classList.add('show');});
 })();
 </script>
-
-
+<script id="global-page-number-script">
+(()=>{
+ const pages=[...document.querySelectorAll('#added-pages > section')];
+ const total=pages.length;
+ pages.forEach((page,index)=>{
+  const badge=document.createElement('div');
+  badge.className='page-number';
+  badge.textContent=String(index+1).padStart(2,'0')+' / '+String(total).padStart(2,'0');
+  badge.setAttribute('aria-label','Page '+(index+1)+' of '+total);
+  page.appendChild(badge);
+ });
+})();
+</script>
 </body>
 </html>
