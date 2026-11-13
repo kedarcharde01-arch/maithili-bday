@@ -841,7 +841,13 @@ const seaPhotoData=[['First wave · salty breeze','https://images.unsplash.com/p
 function renderSeaPhotos(){const root=document.getElementById('seaPhotos');root.innerHTML='';seaPhotoData.forEach((item,i)=>{const tile=document.createElement('div');tile.className='wave-photo';tile.style.setProperty('--delay',(i*1.1)+'s');tile.innerHTML='<img loading="lazy" src="'+item[1]+'" alt="'+item[0]+'" onerror="this.style.display=\'none\'"><p>'+item[0]+'</p>';root.appendChild(tile);});}
 let planeReady=false; let planeSequenceStarted=false;
 const plane=document.getElementById('plane');
-plane.addEventListener('animationend',(event)=>{if(event.animationName==='planeTakeoff'||event.animationName==='planeTakeoffMobile'){planeReady=true;document.getElementById('planeHint').textContent='A LITTLE SURPRISE IS COMING CLOSER… ✨';setTimeout(()=>plane.classList.add('zoom-final'),650);}else if(event.animationName==='planeZoomClose'||event.animationName==='planeZoomCloseMobile'){document.getElementById('planeHint').textContent='LOOK THROUGH THE WINDOWS ♥';document.getElementById('planeSurprise').classList.add('show');renderPhotos(document.getElementById('planePhotos'),[['Cloud nine','https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900'],['Window seat views','https://images.unsplash.com/photo-1500534623283-312aade485b7?w=900'],['Somewhere beautiful','https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=900']]);document.getElementById('planeGallery').classList.add('show');}});
+plane.addEventListener('animationend',(event)=>{if(event.animationName==='planeTakeoff'||event.animationName==='planeTakeoffMobile'){planeReady=true;document.getElementById('planeHint').textContent='A LITTLE SURPRISE IS COMING CLOSER… ✨';setTimeout(()=>plane.classList.add('zoom-final'),650);}else if(event.animationName==='planeZoomClose'||event.animationName==='planeZoomCloseMobile'){document.getElementById('planeHint').textContent='LOOK THROUGH THE WINDOWS ♥';document.getElementById('planeSurprise').classList.add('show');
+renderPhotos(document.getElementById('planePhotos'),[
+ ['Our memory 1','assets/photos/photo10.JPG'],
+ ['Our memory 2','assets/photos/photo11.JPG'],
+ ['Our memory 3','assets/photos/photo12.JPG']
+]);
+,[['Cloud nine','https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900'],['Window seat views','https://images.unsplash.com/photo-1500534623283-312aade485b7?w=900'],['Somewhere beautiful','https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=900']]);document.getElementById('planeGallery').classList.add('show');}});
 let planeClicked=false;</script>
 <script id="fx-script">
 (function(){
