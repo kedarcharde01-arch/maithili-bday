@@ -801,11 +801,34 @@ function addRep(){reps++;document.getElementById('reps').textContent=reps;}
 function addWater(){water=Math.min(8,water+1);document.getElementById('water').textContent=water+' / 8';}
 const quotes=['Your strength is your superpower.','Consistency makes the magic happen.','Strong mind. Strong body. Strong heart.','One more rep, one more reason to be proud.'];
 let qi=0;function newQuote(){qi=(qi+1)%quotes.length;document.getElementById('motivation').textContent=quotes[qi];}
+
 const gymSets={
- weights:{title:'Power in every rep',photos:[['Strength session','https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800'],['Dumbbell day','https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800'],['Training focus','https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800']]},
- treadmill:{title:'One step at a time',photos:[['Cardio energy','https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=800'],['Run your own race','https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800'],['Keep moving','https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800']]},
- yoga:{title:'Stretch, breathe, reset',photos:[['Find your balance','https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800'],['A moment to reset','https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800'],['Mind and body','https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800']]}
+ weights:{
+  title:'Our strength moments ♥',
+  photos:[
+   ['Strong together','assets/photos/photo1.jpeg'],
+   ['Training day','assets/photos/photo2.jpeg'],
+   ['A little gym memory','assets/photos/photo3.jpeg']
+  ]
+ },
+ treadmill:{
+  title:'Every step, a memory ♥',
+  photos:[
+   ['Making memories','assets/photos/photo4.jpeg'],
+   ['Side by side','assets/photos/photo5.jpeg'],
+   ['Our favourite moments','assets/photos/photo6.jpeg']
+  ]
+ },
+ yoga:{
+  title:'Balance, smiles & us ♥',
+  photos:[
+   ['A calm little moment','assets/photos/photo7.jpeg'],
+   ['Together is better','assets/photos/photo8.jpeg'],
+   ['One more memory','assets/photos/photo9.jpeg']
+  ]
+ }
 };
+
 function renderPhotos(target,items){target.innerHTML='';items.forEach((item,i)=>{const tile=document.createElement('div');tile.className='photo-tile';tile.style.setProperty('--delay',(i*.65)+'s');tile.innerHTML='<img loading="lazy" src="'+item[1]+'" alt="'+item[0]+'" onerror="this.style.display=\'none\';this.parentElement.classList.add(\'image-fallback\')"><p>'+item[0]+'</p>';target.appendChild(tile);});}
 function openGymGallery(type){const set=gymSets[type];document.getElementById('gymGalleryTitle').textContent=set.title;renderPhotos(document.getElementById('gymPhotos'),set.photos);document.getElementById('gymGallery').classList.add('show');document.getElementById('gymGallery').scrollIntoView({behavior:'smooth',block:'nearest'});}
 function closeGallery(id){document.getElementById(id).classList.remove('show');}
