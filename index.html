@@ -835,9 +835,21 @@ function renderPhotos(target,items){target.innerHTML='';items.forEach((item,i)=>
 function openGymGallery(type){const set=gymSets[type];document.getElementById('gymGalleryTitle').textContent=set.title;renderPhotos(document.getElementById('gymPhotos'),set.photos);document.getElementById('gymGallery').classList.add('show');document.getElementById('gymGallery').scrollIntoView({behavior:'smooth',block:'nearest'});}
 function closeGallery(id){document.getElementById(id).classList.remove('show');}
 const beachPhotos=[['Golden hour by the sea','https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900'],['Turquoise water','https://images.unsplash.com/photo-1519046904884-53103b34b206?w=900'],['A quiet beach day','https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=900']];
-const mountainPhotos=[['Above the clouds','https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900'],['Mountain road trip','https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900'],['The peaceful peaks','https://images.unsplash.com/photo-1464278533981-50106e6176b1?w=900']];
+
+const mountainPhotos=[
+ ['Our mountain memory 1','assets/photos/photo16.JPG'],
+ ['Our mountain memory 2','assets/photos/photo17.JPG'],
+ ['Our mountain memory 3','assets/photos/photo18.JPG']
+];
+
 function openDestination(kind){const isBeach=kind==='beach';document.getElementById('beachCard').classList.toggle('open',isBeach);document.getElementById('mountainCard').classList.toggle('open',!isBeach);if(isBeach){closeGallery('destinationGallery');renderSeaPhotos();document.getElementById('seaAlbum').classList.add('show');document.getElementById('seaAlbum').scrollIntoView({behavior:'smooth',block:'nearest'});}else{closeGallery('seaAlbum');document.getElementById('destinationTitle').textContent='Mountain air & cosy adventures';renderPhotos(document.getElementById('destinationPhotos'),mountainPhotos);document.getElementById('destinationGallery').classList.add('show');document.getElementById('destinationGallery').scrollIntoView({behavior:'smooth',block:'nearest'});}}
-const seaPhotoData=[['First wave · salty breeze','https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900'],['Second wave · turquoise dreams','https://images.unsplash.com/photo-1519046904884-53103b34b206?w=900'],['Third wave · golden hour','https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=900']];
+
+const seaPhotoData=[
+ ['Our beach memory 1','assets/photos/photo13.JPG'],
+ ['Our beach memory 2','assets/photos/photo14.JPG'],
+ ['Our beach memory 3','assets/photos/photo15.JPG']
+];
+
 function renderSeaPhotos(){const root=document.getElementById('seaPhotos');root.innerHTML='';seaPhotoData.forEach((item,i)=>{const tile=document.createElement('div');tile.className='wave-photo';tile.style.setProperty('--delay',(i*1.1)+'s');tile.innerHTML='<img loading="lazy" src="'+item[1]+'" alt="'+item[0]+'" onerror="this.style.display=\'none\'"><p>'+item[0]+'</p>';root.appendChild(tile);});}
 let planeReady=false; let planeSequenceStarted=false;
 const plane=document.getElementById('plane');
