@@ -802,6 +802,7 @@ function addWater(){water=Math.min(8,water+1);document.getElementById('water').t
 const quotes=['Your strength is your superpower.','Consistency makes the magic happen.','Strong mind. Strong body. Strong heart.','One more rep, one more reason to be proud.'];
 let qi=0;function newQuote(){qi=(qi+1)%quotes.length;document.getElementById('motivation').textContent=quotes[qi];}
 
+
 const gymSets={
  weights:{
   title:'Our strength moments ♥',
@@ -828,6 +829,7 @@ const gymSets={
   ]
  }
 };
+
 
 function renderPhotos(target,items){target.innerHTML='';items.forEach((item,i)=>{const tile=document.createElement('div');tile.className='photo-tile';tile.style.setProperty('--delay',(i*.65)+'s');tile.innerHTML='<img loading="lazy" src="'+item[1]+'" alt="'+item[0]+'" onerror="this.style.display=\'none\';this.parentElement.classList.add(\'image-fallback\')"><p>'+item[0]+'</p>';target.appendChild(tile);});}
 function openGymGallery(type){const set=gymSets[type];document.getElementById('gymGalleryTitle').textContent=set.title;renderPhotos(document.getElementById('gymPhotos'),set.photos);document.getElementById('gymGallery').classList.add('show');document.getElementById('gymGallery').scrollIntoView({behavior:'smooth',block:'nearest'});}
