@@ -348,7 +348,7 @@ h1.reveal.in,h2.reveal.in{animation:revealUp .9s cubic-bezier(.2,.8,.2,1) var(--
 /* Requested interactions */
 #added-pages .opening-target{position:relative;width:180px;height:155px;margin:0 auto 8px;display:grid;place-items:center}
 #added-pages .opening-target .heart3d{margin:0;cursor:crosshair;transition:filter .3s}
-#added-pages .shoot-arrow{position:absolute;z-index:8;left:calc(50% - 125px);top:calc(50% + 58px);width:58px;height:58px;border:1px solid #ff8bb8;border-radius:50%;background:#24101f;color:#ffd7e7;font-size:37px;line-height:1;box-shadow:0 0 22px #ff3e8b66;touch-action:none;cursor:grab}
+#added-pages .shoot-arrow{position:absolute;z-index:8;left:calc(50% - 145px);top:calc(50% + 58px);width:58px;height:58px;border:1px solid #ff8bb8;border-radius:50%;background:#24101f;color:#ffd7e7;font-size:37px;line-height:1;box-shadow:0 0 22px #ff3e8b66;touch-action:none;cursor:grab}
 #added-pages .shoot-arrow.dragging{cursor:grabbing;transform:scale(1.12);box-shadow:0 0 30px #ff3e8b}
 #added-pages .arrow-instruction{font:11px "DM Sans",sans-serif;letter-spacing:.12em;color:#ffc1d8;margin:4px 0 10px}
 #added-pages .hit-burst{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:100px;opacity:0;pointer-events:none;text-shadow:0 0 25px #fff,0 0 60px #ff3b91}
@@ -580,12 +580,12 @@ h1.reveal.in,h2.reveal.in{animation:revealUp .9s cubic-bezier(.2,.8,.2,1) var(--
 
 #added-pages{display:block;position:relative;background:#090609;color:#fff;font-family:"DM Sans",sans-serif;overflow:hidden;}
 #added-pages .page-number{z-index:15}
-</style><footer>Made with love, just for you ♥</footer><style id="page-order-layout-fix">
+</style><style id="page-order-layout-fix">
 /* Keep the appended-page styling scope while allowing all sections to flow in order. */
 #added-pages{display:contents!important;position:static!important;overflow:visible!important;background:transparent!important}
 </style><main aria-label="Additional romantic surprise pages" id="added-pages"><section id="opening"><div class="opening-glow"></div><div class="wrap"><div class="opening-target"><div aria-label="Glowing pink heart" class="heart3d" id="heartTarget"></div><div class="hit-burst" id="hitBurst">♥</div></div><div aria-live="polite" class="birthday-message" id="birthdayMessage">Happy Birthday Baby</div><div class="arrow-instruction" id="arrowInstruction">Drag the arrow anywhere</div><button aria-label="Drag arrow to heart" class="shoot-arrow" id="shootArrow">➶</button><div class="eyebrow">someone made this, just for you</div><h1 class="headline">A little surprise<br><span class="script" style="color:#ff75aa">from my heart</span></br></h1><p class="copy">A tiny world, made with love. Take your time and enjoy every little moment.</p><button class="btn" onclick="go('gift')" style="margin-top:18px;position:relative;z-index:3" type="button">Continue to your surprise ↓</button></div><div class="skip">Scroll to begin ↓</div></section><section class="section-civil" id="civil">
 <div class="wrap">
-<div class="center eyebrow">Chapter 01 · The creator</div>
+
 <h2>She builds dreams.</h2>
 <p class="lead">From tiny details to big structures — you have the mind of an engineer and the heart of an artist. Tap the little details in your construction site.</p>
 <div class="scene" id="construction">
@@ -625,9 +625,9 @@ h1.reveal.in,h2.reveal.in{animation:revealUp .9s cubic-bezier(.2,.8,.2,1) var(--
 </div>
 </section><section class="section-mall" id="mall">
 <div class="wrap">
-<div class="center eyebrow">Chapter 02 · The style icon</div>
+
 <h2>Her pastel boutique.</h2>
-<p class="lead">Your own little mall — because shopping is not a hobby, it's an experience. Scroll here and let the doors open.</p>
+<p class="lead">Your own little mall — because shopping is not a hobby, it's an experience. Click the button below to open the doors.</p>
 <div class="scene" id="mallScene">
 <svg aria-label="Pastel shopping mall entrance" viewbox="0 0 820 360">
 <rect fill="#f8e9e9" height="360" rx="18" width="820"></rect>
@@ -660,7 +660,7 @@ h1.reveal.in,h2.reveal.in{animation:revealUp .9s cubic-bezier(.2,.8,.2,1) var(--
 </div>
 </section><section class="section-gym" id="gym">
 <div class="wrap">
-<div class="center eyebrow">Chapter 03 · The powerhouse</div>
+
 <h2>Strong looks good on you.</h2>
 <p class="lead">Tap any piece of equipment to unlock a little gym photo story. Each picture arrives one by one — just like every rep builds strength.</p>
 <div class="gym-equipment">
@@ -691,7 +691,7 @@ h1.reveal.in,h2.reveal.in{animation:revealUp .9s cubic-bezier(.2,.8,.2,1) var(--
 </div>
 </section><section class="section-travel" id="travel">
 <div class="wrap">
-<div class="center eyebrow">Chapter 04 · The explorer</div>
+
 <h2>Let's get lost somewhere beautiful.</h2>
 <p class="lead">Watch our little plane take off. When it reaches the sky, tap it to reveal a surprise. Then choose a destination to open its photo story.</p>
 <div class="plane-stage" id="planeStage">
@@ -768,7 +768,7 @@ h1.reveal.in,h2.reveal.in{animation:revealUp .9s cubic-bezier(.2,.8,.2,1) var(--
 <label><input type="checkbox"/><span>We will keep laughing, even at the silly things.</span></label>
 <label><input type="checkbox"/><span>We will be honest, patient and kind with each other.</span></label>
 <label><input type="checkbox"/><span>We will celebrate the little wins together.</span></label>
-<label><input type="checkbox"/><span>We will keep choosing each other, every day.</span></label></div><button class="btn" onclick="savePromises()">I promise ♥</button><div aria-live="polite" class="promise-result" id="promiseResult"></div><button class="btn ghost" onclick="go('final')" style="margin-top:12px">See the final surprise</button></div></section><section class="last-scene" id="final">
+<label><input type="checkbox"/><span>We will keep choosing each other, every day.</span></label></div><button class="btn" onclick="savePromises()">I promise ♥</button><div aria-live="polite" class="promise-result" id="promiseResult"></div></div></section><section class="last-scene" id="final">
 <div class="final-content">
 <div class="final-kicker">If I could choose a thousand times...</div>
 <div class="final-stage">
@@ -798,8 +798,7 @@ body > section, #added-pages > section{position:relative}
 <script>
 function showMsg(id,text){const el=document.getElementById(id);el.textContent=text;el.classList.add('show');}
 const mall=document.getElementById('mallScene');
-const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){mall.classList.add('mall-open');}})},{threshold:.35});
-observer.observe(mall);
+// Mall doors stay closed until the visitor clicks OPEN THE MALL.
 const planeObserver=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting&&!planeSequenceStarted){planeSequenceStarted=true;plane.style.animation='planeTakeoff 7.5s cubic-bezier(.22,.72,.2,1) forwards';planeObserver.disconnect();}})},{threshold:.25});
 planeObserver.observe(document.getElementById('planeStage'));
 document.getElementById('openMall').addEventListener('click',()=>mall.classList.add('mall-open'));
@@ -1046,5 +1045,25 @@ function playSurpriseVideo(){
  });
 })();
 </script>
+
+<style id="final-requested-fixes">
+/* Make page 1–5 copy readable even when the scroll-reveal observer misses a section. */
+.reveal:not(.in), .reveal { opacity:1 !important; visibility:visible !important; }
+.section-civil .eyebrow, .section-civil h2, .section-civil p,
+.section-mall .eyebrow, .section-mall h2, .section-mall p,
+.section-gym .eyebrow, .section-gym h2, .section-gym p,
+.section-travel .eyebrow, .section-travel h2, .section-travel p,
+#added-pages #opening .eyebrow, #added-pages #opening h1,
+#added-pages #opening .copy, #added-pages #opening .arrow-instruction {
+  opacity:1 !important; visibility:visible !important; filter:none !important;
+  -webkit-text-fill-color:currentColor;
+}
+#added-pages #opening .eyebrow { color:#ffc1d8 !important; }
+#added-pages #opening .copy { color:#f5dce7 !important; }
+#added-pages .shoot-arrow { left:calc(50% - 145px) !important; }
+@media (max-width:620px) {
+  #added-pages .shoot-arrow { left:calc(50% - 138px) !important; }
+}
+</style>
 </body>
 </html>
