@@ -1080,44 +1080,31 @@ section .page-number {
 </script>
 
 
-<style id="force-visible-pages-2-to-5-text">
-/* Force readable text on the four pastel story pages (pages 2–5).
-   The enhancement layer paints h1/h2 with transparent gradient text and
-   scroll-reveal can leave elements at opacity:0; reset both safely. */
-#civil .wrap, #mall .wrap, #gym .wrap, #travel .wrap {
-  color:#69535a !important;
+<style id="page-2-construction-text-contrast-fix">
+/* Page 2 (construction section): dark readable copy on the pale background. */
+#civil,
+#civil .wrap,
+#civil .lead,
+#civil p {
+  color: #69535a !important;
+  -webkit-text-fill-color: #69535a !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-shadow: none !important;
 }
-#civil .wrap h1, #civil .wrap h2, #civil .wrap h3,
-#mall .wrap h1, #mall .wrap h2, #mall .wrap h3,
-#gym .wrap h1, #gym .wrap h2, #gym .wrap h3,
-#travel .wrap h1, #travel .wrap h2, #travel .wrap h3 {
-  color:#765866 !important;
-  background:none !important;
-  -webkit-background-clip:border-box !important;
-  background-clip:border-box !important;
-  -webkit-text-fill-color:#765866 !important;
-  text-shadow:none !important;
+#civil h2 {
+  color: #765866 !important;
+  -webkit-text-fill-color: #765866 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: none !important;
 }
-#civil .wrap p, #civil .wrap .eyebrow, #civil .wrap .tap-note,
-#civil .wrap .message, #mall .wrap p, #mall .wrap .eyebrow,
-#mall .wrap small, #mall .wrap .message,
-#gym .wrap p, #gym .wrap .eyebrow, #gym .wrap small,
-#gym .wrap .message, #travel .wrap p, #travel .wrap .eyebrow,
-#travel .wrap small, #travel .wrap .message, #travel .wrap .plane-hint {
-  color:#69535a !important;
-  -webkit-text-fill-color:#69535a !important;
-}
-#civil .wrap .reveal, #mall .wrap .reveal,
-#gym .wrap .reveal, #travel .wrap .reveal,
-#civil .wrap .reveal:not(.in), #mall .wrap .reveal:not(.in),
-#gym .wrap .reveal:not(.in), #travel .wrap .reveal:not(.in),
-#civil .wrap .eyebrow, #civil .wrap h2, #civil .wrap p,
-#mall .wrap .eyebrow, #mall .wrap h2, #mall .wrap p,
-#gym .wrap .eyebrow, #gym .wrap h2, #gym .wrap p,
-#travel .wrap .eyebrow, #travel .wrap h2, #travel .wrap p {
-  opacity:1 !important;
-  visibility:visible !important;
-  filter:none !important;
+#civil .lead {
+  max-width: 700px !important;
+  margin: 16px auto 34px !important;
+  font-size: 17px !important;
+  line-height: 1.9 !important;
+  font-weight: 500 !important;
 }
 </style>
 
