@@ -986,9 +986,8 @@ if(endBtn)endBtn.addEventListener('click',e=>burst(e.clientX,e.clientY,28,200,['
  function closeSurpriseVideo(){if(surpriseVideo)surpriseVideo.pause();if(videoOverlay){videoOverlay.classList.remove('active');videoOverlay.setAttribute('aria-hidden','true');}if(giftContinue)giftContinue.disabled=false;$('#giftHint').textContent='Your surprise is complete. Now continue ♥';}
  
 
-function playSurpriseVideo(){
-  const videoPath = 'assets/videos/birthday.mp4';
 
+function playSurpriseVideo(){
   flowerShower();
 
   if(videoOverlay){
@@ -998,22 +997,18 @@ function playSurpriseVideo(){
 
   if(surpriseVideo){
     surpriseVideo.pause();
-    surpriseVideo.src = videoPath;
+    surpriseVideo.src = 'assets/videos/birthday.mp4';
     surpriseVideo.controls = true;
     surpriseVideo.muted = false;
     surpriseVideo.load();
 
-    const playPromise = surpriseVideo.play();
-
-    if(playPromise){
-      playPromise.catch(()=>{
-        $('#videoMessage').textContent =
-          'Tap play to watch your surprise ♥';
-        surpriseVideo.controls = true;
-      });
-    }
+    surpriseVideo.play().catch(function(){
+      $('#videoMessage').textContent =
+        'Tap the play button to watch your birthday surprise ♥';
+    });
   }
 }
+
 
 {flowerShower();if(videoOverlay){videoOverlay.classList.add('active');videoOverlay.setAttribute('aria-hidden','false');}if(personalVideoURL&&surpriseVideo){surpriseVideo.src=personalVideoURL;surpriseVideo.controls=true;surpriseVideo.muted=false;surpriseVideo.currentTime=0;const pp=surpriseVideo.play();if(pp&&pp.catch)pp.catch(()=>{$('#videoMessage').textContent='Tap play to watch your surprise ♥';surpriseVideo.controls=true;});}else{if($('#videoMessage'))$('#videoMessage').textContent='Close this window to continue ♥';if(surpriseVideo)surpriseVideo.removeAttribute('src');}}
  function openGift(){if(giftStarted)return;giftStarted=true;gift.classList.add('opened');giftContinue.disabled=true;$('#giftHint').textContent='A shower of flowers, just for you…';setTimeout(playSurpriseVideo,850);}
