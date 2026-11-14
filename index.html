@@ -994,6 +994,7 @@ if(endBtn)endBtn.addEventListener('click',e=>burst(e.clientX,e.clientY,28,200,['
  
 
 
+
 function playSurpriseVideo(){
   flowerShower();
 
@@ -1004,17 +1005,22 @@ function playSurpriseVideo(){
 
   if(surpriseVideo){
     surpriseVideo.pause();
-    surpriseVideo.src = 'assets/videos/birthday.mp4';
-    surpriseVideo.controls = true;
-    surpriseVideo.muted = false;
+    surpriseVideo.src='assets/videos/birthday.mp4';
+    surpriseVideo.controls=true;
+    surpriseVideo.muted=false;
     surpriseVideo.load();
 
-    surpriseVideo.play().catch(function(){
-      $('#videoMessage').textContent =
-        'Tap the play button to watch your birthday surprise ♥';
-    });
+    const pp=surpriseVideo.play();
+
+    if(pp && pp.catch){
+      pp.catch(()=>{
+        $('#videoMessage').textContent=
+          'Tap play to watch your surprise ♥';
+      });
+    }
   }
 }
+
 
 
 {flowerShower();if(videoOverlay){videoOverlay.classList.add('active');videoOverlay.setAttribute('aria-hidden','false');}if(personalVideoURL&&surpriseVideo){surpriseVideo.src=personalVideoURL;surpriseVideo.controls=true;surpriseVideo.muted=false;surpriseVideo.currentTime=0;const pp=surpriseVideo.play();if(pp&&pp.catch)pp.catch(()=>{$('#videoMessage').textContent='Tap play to watch your surprise ♥';surpriseVideo.controls=true;});}else{if($('#videoMessage'))$('#videoMessage').textContent='Close this window to continue ♥';if(surpriseVideo)surpriseVideo.removeAttribute('src');}}
