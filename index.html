@@ -1022,8 +1022,6 @@ function playSurpriseVideo(){
 }
 
 
-
-{flowerShower();if(videoOverlay){videoOverlay.classList.add('active');videoOverlay.setAttribute('aria-hidden','false');}if(personalVideoURL&&surpriseVideo){surpriseVideo.src=personalVideoURL;surpriseVideo.controls=true;surpriseVideo.muted=false;surpriseVideo.currentTime=0;const pp=surpriseVideo.play();if(pp&&pp.catch)pp.catch(()=>{$('#videoMessage').textContent='Tap play to watch your surprise ♥';surpriseVideo.controls=true;});}else{if($('#videoMessage'))$('#videoMessage').textContent='Close this window to continue ♥';if(surpriseVideo)surpriseVideo.removeAttribute('src');}}
  function openGift(){if(giftStarted)return;giftStarted=true;gift.classList.add('opened');giftContinue.disabled=true;$('#giftHint').textContent='A shower of flowers, just for you…';setTimeout(playSurpriseVideo,850);}
  if(gift){gift.addEventListener('click',openGift);gift.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openGift();}});}if(surpriseVideo){surpriseVideo.addEventListener('ended',closeSurpriseVideo);surpriseVideo.addEventListener('click',()=>{if(surpriseVideo.paused&&surpriseVideo.src){const pp=surpriseVideo.play();if(pp&&pp.catch)pp.catch(()=>{});}});}if(videoClose)videoClose.addEventListener('click',closeSurpriseVideo);
  const env=$('#envelopeArt');function openEnv(){env.classList.toggle('open');}env.addEventListener('click',openEnv);env.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openEnv();}});
