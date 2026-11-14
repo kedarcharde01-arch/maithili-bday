@@ -301,7 +301,14 @@ h1.reveal.in,h2.reveal.in{animation:revealUp .9s cubic-bezier(.2,.8,.2,1) var(--
 #added-pages img, #added-pages video{max-width:100%;}
 #added-pages button,#added-pages [role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:transparent;}
 </style>
-<style>.image-fallback{min-height:190px;background:linear-gradient(135deg,#eadde9,#d9e9e2);display:grid;place-items:center;color:#8b7181}.image-fallback:before{content:"A lovely memory ♥";font:italic 18px Georgia,serif}</style></head>
+<style>.image-fallback{min-height:190px;background:linear-gradient(135deg,#eadde9,#d9e9e2);display:grid;place-items:center;color:#8b7181}.image-fallback:before{content:"A lovely memory ♥";font:italic 18px Georgia,serif}</style><style>
+.video-overlay:not(.active) {
+  display: none !important;
+}
+.video-overlay.active {
+  display: flex !important;
+}
+</style></head>
 <body>
 
 
