@@ -1038,5 +1038,46 @@ function playSurpriseVideo(){
   #added-pages .shoot-arrow { left:calc(50% - 138px) !important; }
 }
 </style>
+
+<style id="force-remove-all-page-indicators">
+/* Final safeguard: no page counters or numbered badges on any section. */
+.page-number,
+[class~="page-number"],
+[class*="page-number"],
+[id*="page-number"],
+#added-pages .page-number,
+#added-pages [aria-label^="Page "],
+section > .page-number,
+section .page-number {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+</style>
+<script id="remove-injected-page-indicators">
+(function () {
+  const removePageIndicators = () => {
+    document.querySelectorAll(
+      '.page-number, [class*="page-number"], [id*="page-number"], [aria-label^="Page "]'
+    ).forEach(node => node.remove());
+
+    // Also catch a legacy badge if it is injected without its old CSS class.
+    document.querySelectorAll('section, main, body').forEach(parent => {
+      parent.querySelectorAll(':scope > div, :scope > span').forEach(node => {
+        const label = (node.textContent || '').trim();
+        if (/^\d{1,2}\s*\/\s*\d{1,2}$/.test(label)) node.remove();
+      });
+    });
+  };
+  removePageIndicators();
+  if (document.documentElement && 'MutationObserver' in window) {
+    new MutationObserver(removePageIndicators).observe(document.documentElement, {
+      childList: true, subtree: true
+    });
+  }
+})();
+</script>
+
 </body>
 </html>
