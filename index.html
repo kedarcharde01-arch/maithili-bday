@@ -985,7 +985,10 @@ if(endBtn)endBtn.addEventListener('click',e=>burst(e.clientX,e.clientY,28,200,['
  function flowerShower(){const layer=$('#flowerRain');if(!layer)return;layer.innerHTML='';for(let i=0;i<110;i++){const f=document.createElement('span');f.textContent=['🌸','🌹','🌷','💗','✿','🌺'][i%6];f.style.left=Math.random()*100+'%';f.style.setProperty('--duration',(2.5+Math.random()*3)+'s');f.style.setProperty('--size',(20+Math.random()*24)+'px');f.style.setProperty('--drift',((Math.random()-.5)*180)+'px');f.style.animationDelay=(Math.random()*.8)+'s';layer.appendChild(f);}}
  function closeSurpriseVideo(){if(surpriseVideo)surpriseVideo.pause();if(videoOverlay){videoOverlay.classList.remove('active');videoOverlay.setAttribute('aria-hidden','true');}if(giftContinue)giftContinue.disabled=false;$('#giftHint').textContent='Your surprise is complete. Now continue ♥';}
  
+
 function playSurpriseVideo(){
+  const videoPath = 'assets/videos/birthday.mp4';
+
   flowerShower();
 
   if(videoOverlay){
@@ -994,22 +997,25 @@ function playSurpriseVideo(){
   }
 
   if(surpriseVideo){
-    surpriseVideo.src='assets/videos/birthday.mp4';
-    surpriseVideo.controls=true;
-    surpriseVideo.muted=false;
-    surpriseVideo.currentTime=0;
+    surpriseVideo.pause();
+    surpriseVideo.src = videoPath;
+    surpriseVideo.controls = true;
+    surpriseVideo.muted = false;
+    surpriseVideo.load();
 
-    const pp=surpriseVideo.play();
+    const playPromise = surpriseVideo.play();
 
-    if(pp && pp.catch){
-      pp.catch(()=>{
-        $('#videoMessage').textContent='Tap play to watch your surprise ♥';
-        surpriseVideo.controls=true;
+    if(playPromise){
+      playPromise.catch(()=>{
+        $('#videoMessage').textContent =
+          'Tap play to watch your surprise ♥';
+        surpriseVideo.controls = true;
       });
     }
   }
 }
-{flowerShower();if(videoOverlay){videoOverlay.classList.add('active');videoOverlay.setAttribute('aria-hidden','false');}if(personalVideoURL&&surpriseVideo){surpriseVideo.src=personalVideoURL;surpriseVideo.controls=true;surpriseVideo.muted=false;surpriseVideo.currentTime=0;const pp=surpriseVideo.play();if(pp&&pp.catch)pp.catch(()=>{$('#videoMessage').textContent='Tap play to watch your surprise ♥';surpriseVideo.controls=true;});}else{if($('#videoMessage'))$('#videoMessage').textContent='Your video has not been added yet. Close this window to continue ♥';if(surpriseVideo)surpriseVideo.removeAttribute('src');}}
+
+{flowerShower();if(videoOverlay){videoOverlay.classList.add('active');videoOverlay.setAttribute('aria-hidden','false');}if(personalVideoURL&&surpriseVideo){surpriseVideo.src=personalVideoURL;surpriseVideo.controls=true;surpriseVideo.muted=false;surpriseVideo.currentTime=0;const pp=surpriseVideo.play();if(pp&&pp.catch)pp.catch(()=>{$('#videoMessage').textContent='Tap play to watch your surprise ♥';surpriseVideo.controls=true;});}else{if($('#videoMessage'))$('#videoMessage').textContent='Close this window to continue ♥';if(surpriseVideo)surpriseVideo.removeAttribute('src');}}
  function openGift(){if(giftStarted)return;giftStarted=true;gift.classList.add('opened');giftContinue.disabled=true;$('#giftHint').textContent='A shower of flowers, just for you…';setTimeout(playSurpriseVideo,850);}
  if(gift){gift.addEventListener('click',openGift);gift.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openGift();}});}if(surpriseVideo){surpriseVideo.addEventListener('ended',closeSurpriseVideo);surpriseVideo.addEventListener('click',()=>{if(surpriseVideo.paused&&surpriseVideo.src){const pp=surpriseVideo.play();if(pp&&pp.catch)pp.catch(()=>{});}});}if(videoClose)videoClose.addEventListener('click',closeSurpriseVideo);
  const env=$('#envelopeArt');function openEnv(){env.classList.toggle('open');}env.addEventListener('click',openEnv);env.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openEnv();}});
