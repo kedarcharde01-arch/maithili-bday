@@ -389,21 +389,17 @@ h1.reveal.in,h2.reveal.in{animation:revealUp .9s cubic-bezier(.2,.8,.2,1) var(--
 @keyframes messageRise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
 
 
-/* Page numbering and revised first-page arrow interaction */
-#added-pages .page-number{position:absolute;top:20px;left:22px;z-index:15;color:#d9a6bb;font:10px "DM Sans",sans-serif;letter-spacing:.18em;padding:7px 10px;border:1px solid #d99ab344;border-radius:30px;background:#160b14a8;backdrop-filter:blur(8px)}
-#added-pages #opening .page-number{color:#ffc3dc;border-color:#ff78ad55}
 #added-pages .birthday-message{display:none;font-family:"Great Vibes",cursive;font-size:clamp(48px,10vw,88px);line-height:1.15;color:#ffd0e3;text-shadow:0 0 10px #ff7db5,0 0 28px #ff3189,0 0 60px #ed2478;opacity:0;transform:translateY(25px) scale(.72);}
 #added-pages #opening.hit-state .wrap>.opening-target{margin-bottom:18px}
 #added-pages #opening.hit-state .wrap>:not(.opening-target):not(#birthdayMessage){display:none!important}
 #added-pages #opening.hit-state #birthdayMessage{display:block;animation:birthdayReveal 1.25s cubic-bezier(.16,1,.3,1) forwards}
 #added-pages #opening.hit-state .opening-target .heart3d{animation:heartBeat .85s ease-in-out infinite,heartGlowBurst 1.4s ease-out both}
 #added-pages #opening.hit-state .opening-target .hit-burst{display:grid}
-#added-pages #opening.hit-state .page-number{opacity:.7}
 @keyframes birthdayReveal{0%{opacity:0;transform:translateY(28px) scale(.65);letter-spacing:.03em;filter:blur(12px)}55%{opacity:1;transform:translateY(-5px) scale(1.08);filter:blur(0);letter-spacing:.02em}75%{transform:translateY(0) scale(.97)}100%{opacity:1;transform:translateY(0) scale(1);filter:drop-shadow(0 0 18px #ff6ca8)}}
 @keyframes heartGlowBurst{0%{filter:drop-shadow(0 0 10px #ff3e8b)}45%{filter:drop-shadow(0 0 35px #fff) drop-shadow(0 0 85px #ff2d82)}100%{filter:drop-shadow(0 0 18px #ff3e8b) drop-shadow(0 0 55px #ed2478)}}
 #added-pages .shoot-arrow{touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab;z-index:18}
 #added-pages .shoot-arrow.dragging{cursor:grabbing}
-@media (max-width:620px){#added-pages .page-number{top:12px;left:12px;font-size:9px}#added-pages .birthday-message{font-size:clamp(44px,12vw,70px)}}
+
 
 
 /* Page 3: tree grows and each blossom is interactive */
@@ -579,7 +575,6 @@ h1.reveal.in,h2.reveal.in{animation:revealUp .9s cubic-bezier(.2,.8,.2,1) var(--
 @media (max-width:480px){#added-pages #treeCrown .flower-blossom{width:36px;height:36px;min-width:36px;min-height:36px}#added-pages #treeCrown .heart-blossom{width:31px;height:31px;min-width:31px;min-height:31px}}
 
 #added-pages{display:block;position:relative;background:#090609;color:#fff;font-family:"DM Sans",sans-serif;overflow:hidden;}
-#added-pages .page-number{z-index:15}
 </style><style id="page-order-layout-fix">
 /* Keep the appended-page styling scope while allowing all sections to flow in order. */
 #added-pages{display:contents!important;position:static!important;overflow:visible!important;background:transparent!important}
@@ -785,14 +780,6 @@ h1.reveal.in,h2.reveal.in{animation:revealUp .9s cubic-bezier(.2,.8,.2,1) var(--
 <div aria-live="polite" class="last-reveal" id="finalReveal">If the whole world started over, I would still look for you.<br/><br/>And when I found you, I would choose you all over again.<br/><br/><b>Always yours. ♥</b></div>
 </div>
 </section></main>
-
-<style id="global-page-number-style">
-body > section, #added-pages > section{position:relative}
-.page-number{position:absolute;top:18px;right:20px;z-index:100;min-width:76px;padding:8px 12px;border:1px solid rgba(255,255,255,.65);border-radius:999px;background:rgba(255,255,255,.72);color:#805d70;font:600 10px/1.2 Arial,sans-serif;letter-spacing:2px;text-align:center;box-shadow:0 4px 18px rgba(80,45,65,.12);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);pointer-events:none}
-#added-pages .page-number{background:rgba(25,10,22,.72);border-color:rgba(255,190,215,.45);color:#ffd6e7}
-@media(max-width:600px){.page-number{top:12px;right:12px;padding:7px 10px;font-size:9px;min-width:68px}}
-</style>
-
 
 <!-- Scripts moved to the end so all page elements exist before event handlers attach. -->
 <script>
@@ -1032,20 +1019,6 @@ function playSurpriseVideo(){
  const finalButton=$('#finalButton'),finalHeart=$('#finalHeart');if(finalButton)finalButton.addEventListener('click',function(){$('#finalReveal').classList.add('show');makeFinalPetals(130);this.textContent='I CHOOSE YOU, ALWAYS ♥';});if(finalHeart)finalHeart.addEventListener('click',()=>{finalHeart.animate([{transform:'scale(1)'},{transform:'scale(1.2)'},{transform:'scale(1)'}],{duration:550});$('#finalReveal').classList.add('show');});
 })();
 </script>
-<script id="global-page-number-script">
-(()=>{
- const pages=[...document.querySelectorAll('#added-pages > section')];
- const total=pages.length;
- pages.forEach((page,index)=>{
-  const badge=document.createElement('div');
-  badge.className='page-number';
-  badge.textContent=String(index+1).padStart(2,'0')+' / '+String(total).padStart(2,'0');
-  badge.setAttribute('aria-label','Page '+(index+1)+' of '+total);
-  page.appendChild(badge);
- });
-})();
-</script>
-
 <style id="final-requested-fixes">
 /* Make page 1–5 copy readable even when the scroll-reveal observer misses a section. */
 .reveal:not(.in), .reveal { opacity:1 !important; visibility:visible !important; }
