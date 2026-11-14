@@ -398,6 +398,9 @@ h1.reveal.in,h2.reveal.in{animation:revealUp .9s cubic-bezier(.2,.8,.2,1) var(--
 @keyframes birthdayReveal{0%{opacity:0;transform:translateY(28px) scale(.65);letter-spacing:.03em;filter:blur(12px)}55%{opacity:1;transform:translateY(-5px) scale(1.08);filter:blur(0);letter-spacing:.02em}75%{transform:translateY(0) scale(.97)}100%{opacity:1;transform:translateY(0) scale(1);filter:drop-shadow(0 0 18px #ff6ca8)}}
 @keyframes heartGlowBurst{0%{filter:drop-shadow(0 0 10px #ff3e8b)}45%{filter:drop-shadow(0 0 35px #fff) drop-shadow(0 0 85px #ff2d82)}100%{filter:drop-shadow(0 0 18px #ff3e8b) drop-shadow(0 0 55px #ed2478)}}
 #added-pages .shoot-arrow{touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab;z-index:18}
+/* Reliable draggable arrow positioning */
+#added-pages #opening .wrap{position:relative;}
+#added-pages .shoot-arrow{position:absolute;pointer-events:auto;}
 #added-pages .shoot-arrow.dragging{cursor:grabbing}
 
 
@@ -967,43 +970,73 @@ if(endBtn)endBtn.addEventListener('click',e=>burst(e.clientX,e.clientY,28,200,['
  window.go=go;
  for(let i=0;i<24;i++){const p=document.createElement('span');p.className='petal';p.textContent=['♥','✿','❀','♡'][i%4];p.style.left=Math.random()*100+'%';p.style.fontSize=(9+Math.random()*13)+'px';p.style.animationDuration=(10+Math.random()*14)+'s';p.style.animationDelay=(-Math.random()*20)+'s';root.appendChild(p);}
  const arrow=$('#shootArrow'),target=$('#heartTarget'),opening=$('#opening'),openingWrap=opening.querySelector('.wrap');
- let dragging=false,arrowFinished=false;
- // The arrow can be dragged freely. It hits the heart ONLY when released over the heart.
+ let dragging=false,arrowFinished=false,activePointerId=null;
+ // Reliable mouse + touch drag: track the pointer on window while the arrow is being dragged.
+ arrow.style.position='absolute';
+ arrow.style.touchAction='none';
+ arrow.style.userSelect='none';
  arrow.addEventListener('pointerdown',e=>{
    if(arrowFinished)return;
    dragging=true;
-   arrow.setPointerCapture(e.pointerId);
+   activePointerId=e.pointerId;
    arrow.classList.add('dragging');
    arrow.style.transition='none';
+   try{arrow.setPointerCapture(e.pointerId);}catch(_){}
    e.preventDefault();
  });
- arrow.addEventListener('pointermove',e=>{
-   if(!dragging||arrowFinished)return;
+ function moveArrow(e){
+   if(!dragging||arrowFinished||e.pointerId!==activePointerId)return;
    const r=openingWrap.getBoundingClientRect();
-   const x=Math.max(0,Math.min(r.width-arrow.offsetWidth,e.clientX-r.left-arrow.offsetWidth/2));
-   const y=Math.max(0,Math.min(r.height-arrow.offsetHeight,e.clientY-r.top-arrow.offsetHeight/2));
+   const maxX=Math.max(0,r.width-arrow.offsetWidth);
+   const maxY=Math.max(0,r.height-arrow.offsetHeight);
+   const x=Math.max(0,Math.min(maxX,e.clientX-r.left-arrow.offsetWidth/2));
+   const y=Math.max(0,Math.min(maxY,e.clientY-r.top-arrow.offsetHeight/2));
    arrow.style.left=x+'px';
    arrow.style.top=y+'px';
- });
+   e.preventDefault();
+ }
  function shootArrowToHeart(){
    if(arrowFinished)return;
-   arrowFinished=true;dragging=false;arrow.classList.remove('dragging');
+   arrowFinished=true;
    const wr=openingWrap.getBoundingClientRect(),hr=target.getBoundingClientRect();
+   arrow.classList.remove('dragging');
    arrow.style.transition='left .62s cubic-bezier(.2,.85,.25,1),top .62s cubic-bezier(.2,.85,.25,1),transform .62s,opacity .25s .55s';
    arrow.style.left=(hr.left+hr.width/2-wr.left-arrow.offsetWidth/2)+'px';
    arrow.style.top=(hr.top+hr.height/2-wr.top-arrow.offsetHeight/2)+'px';
    arrow.style.transform='rotate(-25deg) scale(.45)';
-   setTimeout(()=>{arrow.style.opacity='0';$('#hitBurst').classList.remove('show');void $('#hitBurst').offsetWidth;$('#hitBurst').classList.add('show');opening.classList.add('hit-state');const msg=$('#birthdayMessage');msg.style.display='block';msg.style.animation='none';void msg.offsetWidth;msg.style.animation='birthdayReveal 1.25s cubic-bezier(.16,1,.3,1) forwards';},650);
+   setTimeout(()=>{
+     arrow.style.opacity='0';
+     $('#hitBurst').classList.remove('show');
+     void $('#hitBurst').offsetWidth;
+     $('#hitBurst').classList.add('show');
+     opening.classList.add('hit-state');
+     const msg=$('#birthdayMessage');
+     msg.style.display='block';
+     msg.style.animation='none';
+     void msg.offsetWidth;
+     msg.style.animation='birthdayReveal 1.25s cubic-bezier(.16,1,.3,1) forwards';
+   },650);
  }
- function finishDrag(e){
-   if(!dragging)return;
-   dragging=false;arrow.classList.remove('dragging');
-   const h=target.getBoundingClientRect();
-   const inside=e.clientX>=h.left-12&&e.clientX<=h.right+12&&e.clientY>=h.top-12&&e.clientY<=h.bottom+12;
-   if(inside)shootArrowToHeart();
+ function finishArrowDrag(e){
+   if(!dragging||e.pointerId!==activePointerId)return;
+   dragging=false;
+   activePointerId=null;
+   arrow.classList.remove('dragging');
+   // Count it as a hit only when the arrow itself overlaps the heart on release.
+   const a=arrow.getBoundingClientRect(),h=target.getBoundingClientRect();
+   const overlapX=Math.max(0,Math.min(a.right,h.right)-Math.max(a.left,h.left));
+   const overlapY=Math.max(0,Math.min(a.bottom,h.bottom)-Math.max(a.top,h.top));
+   if(overlapX>Math.min(18,a.width*.22)&&overlapY>Math.min(18,a.height*.22)){
+     shootArrowToHeart();
+   }
  }
- arrow.addEventListener('pointerup',finishDrag);
- arrow.addEventListener('pointercancel',()=>{if(dragging){dragging=false;arrow.classList.remove('dragging');}});
+ window.addEventListener('pointermove',moveArrow,{passive:false});
+ window.addEventListener('pointerup',finishArrowDrag);
+ window.addEventListener('pointercancel',e=>{
+   if(dragging&&e.pointerId===activePointerId){
+     dragging=false;activePointerId=null;arrow.classList.remove('dragging');
+   }
+ });
  // Page numbers are added once globally below, across the original and appended sections.
  const gift=$('#giftScene'),giftContinue=$('#giftContinue'),videoOverlay=$('#videoOverlay'),surpriseVideo=$('#surpriseVideo'),videoClose=$('#videoClose');let giftStarted=false;
  // Keep the surprise video hidden until the gift is opened.
@@ -1110,35 +1143,6 @@ section .page-number {
   }
 })();
 </script>
-
-
-<style id="page-2-construction-text-contrast-fix">
-/* Page 2 (construction section): dark readable copy on the pale background. */
-#civil,
-#civil .wrap,
-#civil .lead,
-#civil p {
-  color: #69535a !important;
-  -webkit-text-fill-color: #69535a !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  text-shadow: none !important;
-}
-#civil h2 {
-  color: #765866 !important;
-  -webkit-text-fill-color: #765866 !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  background: none !important;
-}
-#civil .lead {
-  max-width: 700px !important;
-  margin: 16px auto 34px !important;
-  font-size: 17px !important;
-  line-height: 1.9 !important;
-  font-weight: 500 !important;
-}
-</style>
 
 </body>
 </html>
